@@ -1,0 +1,40 @@
+.nav { 
+    text-align: center;
+    font-size: 30px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+}
+.nav a:focus {
+    outline: none;
+}
+.nav .starting {
+    width: 43%;
+    text-align: left;
+}
+.nav .starting i {
+    padding-left: 20px;
+    transition: 0.3s ease;
+    transform: scale(3);
+}
+.nav .starting i:hover {
+    cursor: pointer;
+}
+.nav .centering {
+    width: 20%;
+    text-align: left;
+}
+.nav .ending {
+    width: 33%;
+    text-align: right;
+}
+.nav .ending img {
+    width: 50px;
+    height: 50px;
+}
+
+@media (orientation: portrait) {
+    .nav .centering {
+        width: 40%;
+        font-size: 25px
+    }}

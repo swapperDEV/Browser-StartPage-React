@@ -1,0 +1,8 @@
+.todo {
+    overflow: hidden;
+    border-radius: 15px;
+    margin: 10px;
+    width: 80%;
+    height: 30vh;
+    background-color: rgb(36, 36, 40);
+}

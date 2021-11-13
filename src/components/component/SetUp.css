@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');
+
+input:focus {
+    outline: none;
+}
+button:focus {
+    outline: none;
+}
+.inputDiv {
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.inputDiv p {
+    font-size: 38px;
+    font-family: 'Mochiy Pop P One', sans-serif;
+}
+.theme {
+    flex-basis: 33%;
+    margin: 5px;
+    background-color: white;
+    text-align: center;
+}
+.themes {
+    max-width: 80vw;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.theme {
+    color: black;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    border: 3px solid white;
+    border-radius: 10px;
+    text-align: center;
+}
+.theme b {
+    padding: 10px;
+}
+.theme img {
+    width: 15vw;
+    height: 12vh;
+    width: 100%;
+}
+@media (max-width: 1000px) {
+    .inputDiv p {
+        font-size: 25px;
+    }
+}
+.error {
+    color: red;
+}
+.inputDiv .data {
+    display: flex;
+    flex-direction: column!important;
+    justify-content: center!important;
+    align-items: center!important;
+}
+.data div {
+    width: 60%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    text-align: left;
+    margin-top: 5px
+}
+.data .confirmDiv {
+    justify-content: right;
+}
+.data input {
+    width: 100%;
+    font-size: 18px;
+    padding: 3px;
+    height: 90%;
+    border: 0px solid white;
+}
+.data .loc {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.data .loc input {
+    border: 0px solid white;
+}
+.data .loc button {
+    border: 0px solid white;
+    background-color: white;
+    transition: 0.1s ease;
+}
+.data .loc button:hover {
+    cursor: pointer;
+}
+.data button {
+    font-size: 18px;
+    padding: 3px;
+}
+.data .confirm {
+    background-color: lightgreen;
+    border: 0px solid black;
+    border-radius: 5px;
+}
+.data .confirm:hover {
+    cursor: pointer;
+}
+.todos {
+    font-family: sans-serif!important;
+    margin-top: 30px;
+}

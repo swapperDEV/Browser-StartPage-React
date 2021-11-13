@@ -1,0 +1,43 @@
+.options {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.optionsDiv {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.btn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.btn button {
+    width: 30%;
+    transition: 0.1s ease;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 5px;  
+    background-color: white;
+    border: 1px solid gray; 
+}
+.btn button:hover {
+    background-color: lightblue;
+}
+.link {
+    top: 0%;
+    right: 0%;
+    position: absolute;
+    font-size: 30px;
+}
+.link:hover {
+    cursor: pointer;
+    color: lightblue;
+}
+@media (orientation: portrait) {
+    .btn {
+        flex-direction: row;
+    }
+}

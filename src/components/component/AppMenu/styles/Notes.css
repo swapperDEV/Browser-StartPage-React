@@ -1,0 +1,13 @@
+.notes {
+    overflow: hidden;
+    border-radius: 15px;
+    margin: 10px;
+    width: 80%;
+    height: 30vh;
+}
+.notes textarea {
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    resize: none;
+}

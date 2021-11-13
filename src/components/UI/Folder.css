@@ -1,0 +1,15 @@
+.folder {
+    background-color: white;
+    font-size: 20px;
+    box-shadow: 0px;
+    padding: 5px;
+    border: 0px solid white;
+    margin: 10px;
+    border-radius: 7px;
+}
+.folder:hover {
+    cursor: pointer;
+}
+.inFolder {
+    color: black;
+}
