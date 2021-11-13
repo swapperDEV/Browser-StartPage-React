@@ -12,7 +12,7 @@ const Footer = (props) => {
     const [x, cx] = useState('')
     const closeModal = () => {
         changeVisible(false)
-        window.location.reload(false);
+        window.location.href='https://61901d0efbb3de0008666498--blissful-haibt-d7dc3b.netlify.app'
 
     }
     const createShortCut = (event) => {
