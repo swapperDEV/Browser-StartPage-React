@@ -45,7 +45,7 @@ const Options = (props) => {
         localStorage.removeItem('threeshortcutlink')
         changeResetInfo('The page will refresh in')
         setTimeout(() => {
-            window.location.reload(false);
+            window.location.href='https://61901d0efbb3de0008666498--blissful-haibt-d7dc3b.netlify.app'
         }, 10000)
     }
     const linksReset = () => {
@@ -57,7 +57,7 @@ const Options = (props) => {
         localStorage.removeItem('threeshortcutlink')
         changeResetInfo('The page will refresh in')
         setTimeout(() => {
-            window.location.reload(false);
+            window.location.href='https://61901d0efbb3de0008666498--blissful-haibt-d7dc3b.netlify.app'
         }, 10000)
     }
     return (
