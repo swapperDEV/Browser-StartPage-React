@@ -6,4 +6,4 @@ Actual functions:
 - Getting and Save your City
 - Get your city from your GPS Localization + get gps button
 - Clock with options menu (12 hours type, 24 hours type)
-https://61916250944d5fa769c98549--wizardly-stonebraker-79b681.netlify.app/
+https://wizardly-stonebraker-79b681.netlify.app
