@@ -113,14 +113,6 @@ const SetUp = (props) => {
                 <div className='confirmDiv'>
                     <button onClick={validatorForm} className='confirm'>Confirm <i className="fas fa-check"></i></button>
                 </div>
-                <b className='todos'>todo : ~swapper</b>
-                <b>
-                    - better code, more components
-                </b>
-                <b>- icons in shortcuts</b>
-                <b>- Todo App</b>
-                <b>- more color modes</b>
-                <b>- key shortcuts</b>
             </div>
         </div>
     )
