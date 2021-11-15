@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,MAAM,EAAE,KAAK,CAAC;EACV,KAAK,EAAE,KAAK;CAAG",
-    "sources": [
-        "App.sass"
-    ],
-    "names": [],
-    "file": "App.css"
-}
