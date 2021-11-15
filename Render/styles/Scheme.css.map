@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,UAAU,CAAC;EACP,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,KAAK;EACb,QAAQ,EAAE,MAAM;EAChB,QAAQ,EAAE,QAAQ;CAAG",
+    "sources": [
+        "Scheme.sass"
+    ],
+    "names": [],
+    "file": "Scheme.css"
+}

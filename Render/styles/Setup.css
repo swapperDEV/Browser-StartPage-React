@@ -1,0 +1,153 @@
+.setupMenu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+}
+
+.setupMenu .iconBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 50px;
+  font-size: 100px;
+  -webkit-animation: rotating 13s infinite;
+          animation: rotating 13s infinite;
+}
+
+.registerBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.registerBox .formInput {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.registerBox .formInput .key {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding: 3px;
+  border-radius: 2px;
+  cursor: pointer;
+  -webkit-transition: 0.1s ease;
+  transition: 0.1s ease;
+}
+
+.registerBox .formInput .key:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.registerBox b {
+  margin-top: 30px;
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.registerBox input {
+  border: 0px solid white;
+  border-bottom: 2px solid white;
+  background-color: transparent;
+  color: white;
+  font-size: 30px;
+  outline: none;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .registerBox b {
+    text-align: center;
+    font-size: 25px;
+  }
+  .registerBox input {
+    font-size: 20px;
+    color: white;
+  }
+}
+
+@-webkit-keyframes rotating {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  30% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  75% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  80% {
+    -webkit-transform: rotate(720deg);
+            transform: rotate(720deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes rotating {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  30% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  75% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  80% {
+    -webkit-transform: rotate(720deg);
+            transform: rotate(720deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+/*# sourceMappingURL=Setup.css.map */
