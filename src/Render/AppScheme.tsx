@@ -7,9 +7,7 @@ const Scheme = () => {
     return (
     <Wrapper classes='main-menu'>
         <div className="top"></div>
-        <Wrapper classes="main">
-            <Main/>
-        </Wrapper>
+        <Main/>
         <div className="main-down"></div>
         <div className="footer"></div>
     </Wrapper>

@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import './styles/App.css';
+import './styles/Modes.css';
 import Setup from './Setup'
 import AppScheme from './AppScheme.tsx'
 import Background from '../UI/Background'
@@ -43,7 +44,7 @@ const App = () => {
   },[])
   return (
     <DataContext.Provider value={{image: '', name: myName, city: myCity, lat: '', lon: ''}}>
-      <Background classes='light'>
+      <Background classes='light background'>
         {status ? <AppScheme/> : <Setup sendName={sendName} sendCity={sendCity}/>}
       </Background>
     </DataContext.Provider>

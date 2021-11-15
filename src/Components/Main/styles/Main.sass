@@ -1,11 +1,38 @@
 .main
+    position: relative
     display: flex
     justify-content: center
+    width: 100%
+    height: 100%
     align-items: center
+    flex-direction: column
+    margin: 0px
+    padding: 0px
+    height: auto
     .clock
-        font-size: 1050%
+        text-align: center
+        font-size: 950%
+        margin: 0px
+        padding: 0px
+        letter-spacing: -3px
+        line-height: 1
+        
     
+
+.messageBox
+    text-align: center
+    padding: 0px
+    margin: 0px
+    height: auto
+    .messageTime
+        font-size: 400%
+        padding: 0px
+        margin: 0px
+
 @media (max-width: 1000px) 
     .main
         .clock
-            font-size: 500%
+            font-size: 450%
+    .messageBox
+        .messageTime
+            font-size: 150%

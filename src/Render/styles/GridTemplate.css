@@ -1,18 +1,22 @@
 .main-menu {
     display: grid; 
     grid-template-columns: 1fr 1fr 1fr 1fr; 
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
     gap: 0px 0px; 
     grid-template-areas: 
       "top top top top"
       "top top top top"
       "top top top top"
+      "top top top top"
+      "top top top top"
+      "main main main main"
+      "main main main main"
       "main main main main"
       "main main main main"
       "main main main main"
       "main-down main-down main-down main-down"
       "main-down main-down main-down main-down"
-      "footer footer footer footer"
+      "main-down main-down main-down main-down"
       "footer footer footer footer"
       "footer footer footer footer"; 
   }

@@ -1,0 +1,10 @@
+.light .setting {
+  background-color: white;
+  color: black;
+}
+
+.dark .setting {
+  background-color: black;
+  color: white;
+}
+/*# sourceMappingURL=Modes.css.map */

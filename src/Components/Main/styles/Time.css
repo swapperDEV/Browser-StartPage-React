@@ -4,9 +4,12 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    margin-bottom: 0px!important;
+    padding-bottom: 0px!important;
 }
 .clock {
-    padding: 30px
+  padding-left: 10px;
+  text-align: center;
 }
 .settingClock {
     opacity: 0;
@@ -15,11 +18,12 @@
 }
 .setting {
   position: absolute;
-  transition: 0.3s ease;
+  transition: 2s ease;
   background-color: white;
   color: black;
   border-radius: 5px;
   padding: 5px;
+  opacity: 0.9
 }
 
 .clockBox:hover .settingClock {
