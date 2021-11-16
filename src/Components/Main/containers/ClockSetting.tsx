@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import { Fade } from 'react-awesome-reveal'
 
 const ClockSetting = (prop:any) => {
     const [ifChecked, changeChecked] = useState(false)
@@ -17,13 +18,15 @@ const ClockSetting = (prop:any) => {
     },[])
     return (
         <>
-            <div className='setting box arrow-top'>
-                24-hour clock
-                <label className="switch">
-                    <input type="checkbox" checked={ifChecked} onChange={handleChangeChecked}/>
-                    <span className="slider round"></span>
-                </label>
-            </div>
+            <Fade>
+                <div className='setting box arrow-top'>
+                    24-hour clock
+                    <label className="switch">
+                        <input type="checkbox" checked={ifChecked} onChange={handleChangeChecked}/>
+                        <span className="slider round"></span>
+                    </label>
+                </div>
+            </Fade>
         </>
     )
 }

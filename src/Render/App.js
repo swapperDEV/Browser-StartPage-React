@@ -5,37 +5,45 @@ import Setup from './Setup'
 import AppScheme from './AppScheme.tsx'
 import Background from '../UI/Background'
 import DataContext from '../Store/data-context';
+import NotifyContainer from '../UI/Notification/NotifyContainer.tsx';
 
 const App = () => {
   const [myName, setName] = useState(localStorage.getItem('userName'))
   const [myCity, setCity] = useState(localStorage.getItem('userCity'))
-  const [status, changeStatus] = useState(false)
+  const [lat, setLat] = useState(localStorage.getItem('userLat'))
+  const [lon, setLon] = useState(localStorage.getItem('userLon'))
+
+  const [status, changeStatus] = useState(true)
 
   const isDataExist = () => {
-    if(localStorage.getItem("userName") === null || localStorage.getItem("userName") === '' || localStorage.getItem("userCity") === null || localStorage.getItem("userCity") === '') 
-    {
+    if(localStorage.getItem("userName") === null || localStorage.getItem("userName") === '' || localStorage.getItem("userCity") === null || localStorage.getItem("userCity") === '' || localStorage.getItem('userName') === 'null') {
+      console.log('null')
       changeStatus(false)
     } else {
       changeStatus(true)
     }
   }
 
-  const updateStorage = (what) => {
+  const updateStorage = (what, value, value2, value3) => {
     if(what === 'name') {
-      localStorage.setItem('userName', myName)
+      localStorage.setItem('userName', value)
     } else if (what === 'city') {
-      localStorage.setItem('userCity', myCity)
+      localStorage.setItem('userCity', value)
+      localStorage.setItem('userLat', value2)
+      localStorage.setItem('userLon', value3)
     }
   }
   const sendName = (newName) => {
     console.log(newName)
     setName(newName)
-    updateStorage('name')
+    updateStorage('name', newName, null, null)
   }
-  const sendCity = (newCity) => {
-    console.log(newCity)
+  const sendCity = (newCity, lat, lon) => {
+    console.log(newCity, lat, lon)
     setCity(newCity)
-    updateStorage('city')
+    setLat(lat)
+    setLon(lon)
+    updateStorage('city', newCity, lat, lon)
     changeStatus(true)
   }
 
@@ -43,8 +51,9 @@ const App = () => {
     isDataExist()
   },[])
   return (
-    <DataContext.Provider value={{image: '', name: myName, city: myCity, lat: '', lon: ''}}>
+    <DataContext.Provider value={{image: '', name: myName, city: myCity, lat: lat, lon: lon}}>
       <Background classes='light background'>
+        <NotifyContainer/>
         {status ? <AppScheme/> : <Setup sendName={sendName} sendCity={sendCity}/>}
       </Background>
     </DataContext.Provider>

@@ -2,14 +2,16 @@ import React, {useEffect, useState} from 'react'
 import bgONE from '../Assets/bg/one.jpg'
 import bgTWO from '../Assets/bg/two.jpg'
 import bgTHREE from '../Assets/bg/three.jpg'
+import bgFOUR from '../Assets/bg/four.jpg'
+import bgSIX from '../Assets/bg/six.jpg'
 
 import './styles/background.css'
-const backgrounds = [bgONE, bgTWO, bgTHREE]
+const backgrounds = [bgONE, bgTWO, bgTHREE, bgFOUR, bgSIX]
 //https://cloudconvert.com/mp4-to-gif
 const Background = (props: any) => {
     const [background, setBackground] = useState(backgrounds[2])
     const randomizeBackground = () => {
-        let random:number = Math.floor(Math.random()*3+1); 
+        let random:number = Math.floor(Math.random()*4+1); 
         setBackground(backgrounds[random-1])
     }
     useEffect(() => {
