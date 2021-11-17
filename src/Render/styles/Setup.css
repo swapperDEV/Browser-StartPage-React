@@ -40,6 +40,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: 150%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;

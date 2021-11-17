@@ -3,12 +3,12 @@ import Wrapper from '../UI/Wrapper'
 import './styles/Scheme.css'
 import Main from '../Components/Main/Main'
 import MainDown from '../Components/MainDown/MainDown'
+import Top from '../Components/Top/Top'
 
 const Scheme = () => {
     return (
     <Wrapper classes='main-menu'>
-        <div className="top"></div>
-        <div className="top-content"></div>
+        <Top/>
         <Main/>
         <MainDown/>
         <div className="footer"></div>

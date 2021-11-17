@@ -63,7 +63,7 @@ const Setup = (props:any) => {
                 <i className="fab fa-stumbleupon-circle"></i>
             </div>
             <div className='registerBox'>
-                {step ==='name' &&<NameBox placeholder='Your name' text="Hello, what's your name?" maxLength='20' startValue='' method={nameSend} type='name'/>}
+                {step ==='name' &&<NameBox placeholder='Your name' text="Hi, what's your name?" maxLength='20' startValue='' method={nameSend} type='name'/>}
                 {step === 'city' &&<NameBox placeholder='Your city' text={`${data.name}, where you from?`} maxLength='32' startValue={city} type='city' method={locationSend}/>}
             </div>
         </div>
