@@ -1,31 +1,19 @@
 import React, {useState, useEffect} from 'react'
-import ReactDOM from 'react-dom'
 import './styles/Setup.css'
 import {useContext} from 'react'
 import DataContext from '../Store/data-context'
 import NameBox from './Setup/name'
-import $ from 'jquery'
 import { API } from '../Store/api'
-import { toast } from 'react-toastify';
+import { notify } from '../UI/Notification/ErrorNotify'
 import 'react-toastify/dist/ReactToastify.css';
+import { getUserGps } from '../Functions/getGps'
+import { getCityFromCord } from '../Functions/getCityFromCord'
 
 const Setup = (props:any) => {
     const data = useContext(DataContext)
-    const [city, changeCity] = useState('')
+    const [city, changeCity] = useState<any>('')
     const [step, setStep] = useState('name')
 
-    const notify = (text:string) => toast.warn(`${text}`, {
-        position: "top-left",
-        autoClose: 6000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-    });
-    const createNotification = (text:string) => {
-        notify(text)
-    }
     const nameSend = (value:string) => {
         props.sendName(value)
         setStep('city')
@@ -35,26 +23,32 @@ const Setup = (props:any) => {
         fetch(URL).then(res => res.json()).then((res:any) => {
             console.log(res);
             if(res.message === 'city not found' || res.message === 'bad query') {
-                createNotification('City not found!')
+                notify('City not found!')
             } else {
                 props.sendCity(value, res.coord.lat, res.coord.lon)
                 setStep('')
             }
         })
     }
-    const getUserGps = () => {
-        $.ajax({
-            url: "https://geolocation-db.com/jsonp",
-            jsonpCallback: "callback",
-            dataType: "jsonp",
-            success: function(location:any) {
-                changeCity(location.city)
-                console.log('Pobrano z gps ' + location.city)
-            }
-          })
+    const getCityFowards = async (lat:any, lon:any) => {
+        let city = await getCityFromCord(lat,lon)
+        await console.log(city);
+        await changeCity(city)
+    }
+    const getCity = () => {
+        console.log('search city');
+        getUserGps().then(data=>{
+            console.log(data);
+            if(data.city === null || data.city === 'null' || data.city === undefined || data.city === 'undefined') {
+                let lat = data.lat
+                let lon = data.lon
+                getCityFowards(lat, lon)
+            } else {
+            changeCity(data.city)
+        }})
     }
     useEffect(() => {
-        getUserGps()
+        getCity()
     }, [])
     return (
     <>

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import Wrapper from '../../UI/Wrapper';
 import Weather from './Right/weather';
 import Links from './Left/links';

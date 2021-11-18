@@ -3,7 +3,7 @@ import React from 'react'
 const Wrapper = (props: any) => {
     return (
     <>
-        <div className={props.classes}>
+        <div className={props.classes} onMouseLeave={props.onMouseLeave}>
             {props.children}
         </div>
     </>

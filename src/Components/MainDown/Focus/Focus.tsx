@@ -7,6 +7,7 @@ import CompletedMessage from './Completed'
 import FocusDisplay from './FocusDisplay'
 import FocusSetting from './FocusSetting'
 import SettingButton from './SettingButton'
+import { notify } from '../../../UI/Notification/ErrorNotify'
 
 const Focus = () => {
     const [todayFocus, changeFocus] = useState<any>('')
@@ -23,22 +24,27 @@ const Focus = () => {
         changeFocusSetting(!focusSetting)
     }
     const handleCloseSetting = () => {
+        console.log('mouse leave');
         changeFocusSetting(false)
     }
     const handlePreviousFocus = () => {
-        let actFocus = todayFocus
-        let actFocusCom = isCompleted
-        changeFocus(previousFocus)
-        changeComplete(previousIsCompleted)
-        localStorage.setItem('todayFocus', previousFocus)
-        localStorage.setItem('focusDate', getDay())
-        if(previousIsCompleted=== true) {
-            let storage = 'true'
-            localStorage.setItem('focusComplete', storage)
-        }        
-        changePreviousFocus(actFocus)
-        previousChangeComplete(actFocusCom)
-        handleCloseSetting()
+        if(previousFocus != '') {
+            let actFocus = todayFocus
+            let actFocusCom = isCompleted
+            changeFocus(previousFocus)
+            changeComplete(previousIsCompleted)
+            localStorage.setItem('todayFocus', previousFocus)
+            localStorage.setItem('focusDate', getDay())
+            if(previousIsCompleted=== true) {
+                let storage = 'true'
+                localStorage.setItem('focusComplete', storage)
+            }        
+            changePreviousFocus(actFocus)
+            previousChangeComplete(actFocusCom)
+            handleCloseSetting()
+        } else {
+            notify('Previous state does not exist')
+        }
     }
     const handleClearFocus = () => {
         changePreviousFocus(todayFocus)

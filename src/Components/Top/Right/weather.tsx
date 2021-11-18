@@ -5,6 +5,8 @@ import './styles/weather.css'
 import { useContext } from 'react';
 import { API } from '../../../Store/api';
 import DataContext from '../../../Store/data-context';
+import { weatherSearch } from '../../../Hooks/use-weather-request';
+import { fullWeatherSearch } from '../../../Hooks/use-full-weather-request';
 
 const Weather = () => {
     const [city, changeCity] = useState(useContext(DataContext).city)
@@ -12,27 +14,13 @@ const Weather = () => {
         temp: 0,
         description: ''
     })
-    
-
-    const fullWeather = () => {
-        const URL = API.WEATHER_FULL + city + API.WEATHER_KEY + API.WEATHER_UNITS
-        fetch(URL).then(res => res.json()).then(res => {console.log(res);})
-    }
-    
-    const getWeather = () => {
-        console.log(city == null);
-        if(city == null) {
-        } else {
-        console.log('fetching');
-        const URL = API.WEATHER_LINK + city + API.WEATHER_KEY + API.WEATHER_UNITS
-        fetch(URL).then(res => res.json()).then(res => {
-        let data = {
-            temp: res.main.temp.toFixed(0),
-            description: ''
-        }
+    const getWeather = async () => {
+        let data = await weatherSearch(city)
+        console.log(data);
         changeDataInfo(data)
-        fullWeather()
-    })}}
+        let fullData = await fullWeatherSearch(city)
+        console.log(fullData);
+    }
     
     useEffect(() => {
         getWeather()
@@ -42,7 +30,7 @@ const Weather = () => {
         <Wrapper classes='weather'>
             <Fade>
                 <Wrapper classes='weatherChild'>
-                    <Wrapper classes='up'><i className="fas fa-cloud-sun"></i> {dataInfo.temp}°</Wrapper>
+                    <Wrapper classes='up'><i className="fas fa-cloud-sun"></i> <b>{dataInfo.temp}°</b></Wrapper>
                     <Wrapper classes='bottom'>{city}</Wrapper>
                 </Wrapper>
             </Fade>

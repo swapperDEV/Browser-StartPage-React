@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import { getDay } from '../../../Functions/getDay'
+import Wrapper from '../../../UI/Wrapper'
 
 const FocusEnter = (props:any) => {
     const [input, changeInputValue] = useState<string>('')
@@ -14,10 +15,10 @@ const FocusEnter = (props:any) => {
         }
     }
     return (
-        <>
+        <Wrapper classes='focus-enter'>
             <p>What is your main Focus Today?</p>
             <input value={input} onChange={handleInput} maxLength={50} onKeyPress={keyPress}/>
-        </>
+        </Wrapper>
     )
 }
 
