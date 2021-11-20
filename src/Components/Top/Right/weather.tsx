@@ -8,11 +8,13 @@ import { weatherSearch } from '../../../Hooks/use-weather-request';
 import { fullWeatherSearch } from '../../../Hooks/use-full-weather-request';
 import WeatherDisplay from './weather/WeatherDisplay';
 import { getIcon } from '../../../Functions/weatherGetIcon';
+import ModalContext from '../../../Store/modal-context';
 
 const Weather = (props:any) => {
     const data = useContext(DataContext)
+    const ctx = useContext(ModalContext)
+    const {weatherVisible, toggleWeatherModal} = ctx
     let [city, changeCity] = useState(data.weatherCity)
-    const {visibility, closeLinksModal, toggleWeatherModal} = props
     const [dataInfo, changeDataInfo] = useState<any>({temp: 0})
     const [fullData, changeFullData] = useState<any>(null)
 
@@ -71,7 +73,7 @@ const Weather = (props:any) => {
                         <Wrapper classes='bottom'>{city}</Wrapper>
                     </Wrapper>
                     <Wrapper classes='weatherDisplayChild'>
-                        {visibility && <WeatherDisplay close={changeMoreDisplay} dayData={dataInfo} fullData={fullData} city={city} updateWeatherCityParent={updateWeatherCity}/>}
+                        {weatherVisible && <WeatherDisplay close={changeMoreDisplay} dayData={dataInfo} fullData={fullData} city={city} updateWeatherCityParent={updateWeatherCity}/>}
                     </Wrapper>
                 </Fade>
             </Wrapper>

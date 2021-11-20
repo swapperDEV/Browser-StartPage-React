@@ -1,0 +1,33 @@
+.searchBox
+    display: flex
+    transition: 0.1s ease
+    padding-bottom: 3px
+    top: 3px
+    align-items: flex-end
+    margin-top: 1px
+    border-bottom: 1px solid transparent
+    .searchText
+        font-size: 20px!important
+    .searchInput
+        background-color: transparent
+        border: 0px solid white
+        outline: none
+        padding-left: 8px
+        font-size: 20px
+        color: white
+.searchInput:hover
+    cursor: pointer
+.searchInput:focus
+    cursor: text
+.searchBox:hover
+    cursor: pointer
+    border-bottom: 1px solid white
+.searchBox:hover .searchWeb
+    opacity: 1
+.searchWeb
+    transition: 0.1s ease
+    opacity: 0
+.visibleSearch .searchWeb
+    opacity: 1
+.visibleSearch
+    border-bottom: 1px solid white

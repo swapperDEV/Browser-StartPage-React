@@ -1,8 +1,10 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import Wrapper from '../../../UI/Wrapper'
 import View from './View'
-const FooterRight = (props:any) => {
-    const {widgetDisplay, handleWidgetDisplay} = props
+import ModalContext from '../../../Store/modal-context'
+const FooterRight = () => {
+    const ctx = useContext(ModalContext)
+    const {widgetDisplay, handleWidgetDisplay} = ctx
     return (
         <Wrapper classes='footer-right'>
             {widgetDisplay && <View/>}

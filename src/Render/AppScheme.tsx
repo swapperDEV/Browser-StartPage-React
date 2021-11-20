@@ -5,6 +5,7 @@ import Main from '../Components/Main/Main'
 import MainDown from '../Components/MainDown/MainDown'
 import Top from '../Components/Top/Top'
 import Footer from '../Components/Footer/footer'
+import ModalContext from '../Store/modal-context'
 
 const Scheme = () => {
     const [settingVisible, changeSettingVisible] = useState(false)
@@ -56,7 +57,6 @@ const Scheme = () => {
         changeSettingDisplay(!mainSettingDisplay)
     }
     const handleClick = (e:any) => {
-        console.log(e.target.closest('div'));
         if(e.target.classList.contains('links') || e.target.classList.contains('weather') || e.target.classList.contains('footer') || e.target.closest('div').classList.contains('main-down') || e.target.closest('div').classList.contains('main')|| e.target.closest('div').classList.contains('clockBox')|| e.target.closest('div').classList.contains('focus-enter')){
             closeLinksModal()
             closeWeatherModal()
@@ -65,12 +65,25 @@ const Scheme = () => {
         }
     }
     return (
-    <Wrapper classes='main-menu' onClick={handleClick}>
-        <Top closeWeatherModal={closeWeatherModal} closeLinksModal={closeLinksModal} toggleLinksModal={toggleLinksModal} toggleWeatherModal={toggleWeatherModal} weatherVisible={weatherVisible} settingVisible={settingVisible}/>
-        <Main/>
-        <MainDown/>
-        <Footer handleChangeSettingDisplay={handleChangeSettingDisplay} mainSettingDisplay={mainSettingDisplay} widgetDisplay={widgetDisplay} handleWidgetDisplay={handleWidgetDisplay}/>
-    </Wrapper>
+        <>
+            <ModalContext.Provider value={{
+                handleChangeSettingDisplay: handleChangeSettingDisplay,
+                mainSettingDisplay: mainSettingDisplay,
+                widgetDisplay: widgetDisplay,
+                handleWidgetDisplay: handleWidgetDisplay,
+                toggleLinksModal: toggleLinksModal,
+                toggleWeatherModal: toggleWeatherModal,
+                weatherVisible: weatherVisible,
+                settingVisible: settingVisible,
+            }}>
+                <Wrapper classes='main-menu' onClick={handleClick}>
+                    <Top/>
+                    <Main/>
+                    <MainDown/>
+                    <Footer/>
+                </Wrapper>
+            </ModalContext.Provider>
+        </>
     )}
 
 export default Scheme

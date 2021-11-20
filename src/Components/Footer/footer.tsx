@@ -5,13 +5,12 @@ import FooterCenter from './Center/FooterCenter'
 import FooterLeft from './Left/FooterLeft'
 import FooterRight from './Right/FooterRight'
 
-const Footer = (props:any) => {
-    const {handleChangeSettingDisplay, mainSettingDisplay, widgetDisplay, handleWidgetDisplay} = props
+const Footer = () => {
     return (
         <Wrapper classes='footer'>
-            <FooterLeft handleChangeSettingDisplay={handleChangeSettingDisplay} mainSettingDisplay={mainSettingDisplay}/>
+            <FooterLeft/>
             <FooterCenter/>
-            <FooterRight widgetDisplay={widgetDisplay} handleWidgetDisplay={handleWidgetDisplay}/>
+            <FooterRight/>
         </Wrapper>
     )
 }

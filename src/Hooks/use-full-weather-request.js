@@ -39,6 +39,7 @@ export const fullWeatherSearch = async (city) => {
         name: [],
     }
     let dayToSearchTable = await dayToSearch()
+    if(data !== undefined) {
     await data.map((e) => {
         dayToSearchTable.map((date) => {
             if(e.dt_txt === date + ' 12:00:00') {
@@ -51,7 +52,7 @@ export const fullWeatherSearch = async (city) => {
                 return 0
         })
         return 0
-    })
+    })}
     console.log(daysReturned)
     return daysReturned
 }
