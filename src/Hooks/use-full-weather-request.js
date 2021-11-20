@@ -18,12 +18,19 @@ const getDateName = (data) => {
     return name
 }
 export const fullWeatherSearch = async (city) => {
+    let whichUnits = localStorage.getItem('units')
+    let URL
+    const URLMetric = API.WEATHER_FULL + city + API.WEATHER_KEY + API.WEATHER_UNITS
+    const URLImperial = API.WEATHER_FULL + city + API.WEATHER_KEY + API.WEATHER_UNITS_IMPERIAL
     if(city === null) {
         city = 'London'
     }
     let data
-    const URL = API.WEATHER_FULL + city + API.WEATHER_KEY + API.WEATHER_UNITS
-    await fetch(URL).then(res => res.json()).then(res => {
+    if(whichUnits === 'metric') {
+        URL = URLMetric
+    } else {
+        URL = URLImperial
+    }    await fetch(URL).then(res => res.json()).then(res => {
     data = res})
     data = data.list
     let daysReturned = {

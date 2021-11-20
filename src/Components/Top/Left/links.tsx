@@ -4,9 +4,8 @@ import './styles/link.css'
 import Icon from '../../../UI/Icon';
 import { Slide } from 'react-awesome-reveal';
 const Links = (props:any) => {
-    const {toggleLinksModal, closeWeatherModal, visibility} = props
+    const {toggleLinksModal, visibility} = props
     const handleSettingVisible = () => {
-        closeWeatherModal()
         toggleLinksModal()
     }
     return (

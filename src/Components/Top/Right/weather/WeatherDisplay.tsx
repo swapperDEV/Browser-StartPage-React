@@ -18,6 +18,7 @@ const WeatherDisplay = (props:any) => {
     const [fullData] = useState(props.fullData)
     const [cityIfInput, changeCityIfInput] = useState(false)
     const [inputCity, changeCityInput] = useState<any>('')
+    const [units, changeUnits] = useState(localStorage.getItem('units'))
     let days
     if(fullData !== null) {
         days = fullData.map((day:any) => (
@@ -73,6 +74,19 @@ const WeatherDisplay = (props:any) => {
     const resetInput = () => {
         changeCityInput('')
     }
+    const unitsSwitch = () => {
+        if(localStorage.getItem('units') === 'metric') {
+            localStorage.setItem('units', 'imperial')
+            changeUnits('imperial')
+        } else {
+            localStorage.setItem('units', 'metric')
+            changeUnits('metric')
+        }
+        // @ts-ignore
+        updateWeatherCity(city)
+        updateWeatherCityParent(city)
+        
+    }
     return (
         <>
             <Slide direction={'right'} duration={200}>
@@ -83,6 +97,9 @@ const WeatherDisplay = (props:any) => {
                     </Wrapper>
                     <Wrapper classes='nextDays'>
                         {days}
+                    </Wrapper>
+                    <Wrapper classes='units' onClick={unitsSwitch}>
+                        <Icon classes='fas fa-thermometer-empty'/>{units === 'metric' ? <p>°C</p> : <p>°F</p>}
                     </Wrapper>
                 </Wrapper>        
             </Slide>

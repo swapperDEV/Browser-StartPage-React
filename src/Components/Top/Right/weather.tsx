@@ -50,7 +50,6 @@ const Weather = (props:any) => {
     }
     const changeMoreDisplay = () => {
         toggleWeatherModal()
-        closeLinksModal()
     }
     const updateWeatherCity = (value:string) => {
         changeCity(value)

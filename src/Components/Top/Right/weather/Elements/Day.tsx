@@ -1,5 +1,7 @@
 import React from 'react'
 import './styles/days.css'
+import Wrapper from '../../../../../UI/Wrapper'
+import Icon from '../../../../../UI/Icon'
 
 const Day = (props:any) => {
     const {daykey,dayicon, daytempMax, daytempMin} = props

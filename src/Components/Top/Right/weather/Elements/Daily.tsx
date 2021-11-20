@@ -10,13 +10,13 @@ const Daily = (props:any) => {
             {cityIfInput ? 
             <Wrapper classes='inputCity'>
                 <input value={inputCity} onChange={handleInputCity} className='changeCityName' onKeyPress={setCity}/>
-                <Icon classes="fas fa-location-arrow icon" onClick={getGps}></Icon>
-                <Icon classes="fas fa-times icon" onClick={resetInput}></Icon>
+                <Icon classes="fas fa-location-arrow icon" onClick={getGps}/>
+                <Icon classes="fas fa-times icon" onClick={resetInput}/>
             </Wrapper>
             :
             <Wrapper>
                 <p className='city'>{city}
-                    <Icon classes="fas fa-pen edit" onClick={editCity}></Icon>
+                    <Icon classes="fas fa-pen edit" onClick={editCity}/>
                 </p>
                 <p className='description'>{dayData.description}</p> 
             </Wrapper>

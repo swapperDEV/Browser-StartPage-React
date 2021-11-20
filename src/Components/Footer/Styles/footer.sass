@@ -1,0 +1,77 @@
+.footer
+    display: flex
+    position: relative
+    .footer-right
+        height: 100%
+        flex-basis: 20%
+        display: flex
+        flex-direction: column
+        justify-content: flex-end
+        align-items: flex-end
+        .widgetText
+            padding: 20px
+            padding-top: 0px
+            margin-top: 0px
+            font-size: 24px
+            p
+                cursor: pointer
+                margin: 0px
+                padding: 0px
+        .widgetView
+            position: absolute
+            right: 0%
+            bottom: 15px
+            height: 300px
+            background-color: white
+            width: 400px
+            margin: 0px 10px
+            border-radius: 5px
+    .footer-left
+        height: 100%
+        flex-basis: 20%
+        display: flex
+        flex-direction: column
+        justify-content: flex-end
+        .mainSetting
+            position: absolute
+            bottom: 15px
+            min-width: 380px
+            min-height: 300px
+            background-color: white
+            margin: 0px 10px
+            color: black
+            border-radius: 5px
+            margin-bottom: 0px!important
+            padding-bottom: 0px!important
+        .settingOpen
+            padding: 20px
+            padding-top: 0px
+            margin-top: 0px
+            font-size: 24px
+            color: white
+            cursor: pointer 
+            transition: 0.3s ease
+        .settingOpen:hover
+            color: lightgray
+        .sets
+            transtion: 0.3s ease
+        .settingRotate
+            transform: rotate(90deg) scale(1.3)
+    .footer-center
+        flex-grow: 1
+    .footer-right
+        flex-basis: 20%
+    .triagle-bottom
+        color: white
+        font-size: 30px
+        position: absolute
+        bottom: 0%
+        left: 4%
+        transform: translateY(12px)
+    .triagle-right
+        color: white
+        font-size: 30px
+        position: absolute
+        bottom: 0%
+        right: 4%
+        transform: translateY(12px)

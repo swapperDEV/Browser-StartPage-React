@@ -32,6 +32,7 @@ const App = () => {
       localStorage.setItem('weatherCity', value)
       localStorage.setItem('userLat', value2)
       localStorage.setItem('userLon', value3)
+      localStorage.setItem('units', 'metric')
     }
   }
   const sendName = (newName) => {

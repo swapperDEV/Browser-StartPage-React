@@ -21,6 +21,16 @@
 }
 
 .main-menu .footer {
-  min-height: 20%;
+  min-height: 15%;
+  max-height: 20%;
+}
+
+@media (max-height: 400px) {
+  .footer {
+    min-height: 5%;
+  }
+  .footer div {
+    padding-bottom: 20px;
+  }
 }
 /*# sourceMappingURL=Scheme.css.map */
