@@ -12,7 +12,7 @@ const App = () => {
   const [myCity, setCity] = useState(localStorage.getItem('userCity'))
   const [lat, setLat] = useState(localStorage.getItem('userLat'))
   const [lon, setLon] = useState(localStorage.getItem('userLon'))
-
+  const [weatherCity, setWeatherCity] = useState(localStorage.getItem('weatherCity'))
   const [status, changeStatus] = useState(true)
 
   const isDataExist = () => {
@@ -29,6 +29,7 @@ const App = () => {
       localStorage.setItem('userName', value)
     } else if (what === 'city') {
       localStorage.setItem('userCity', value)
+      localStorage.setItem('weatherCity', value)
       localStorage.setItem('userLat', value2)
       localStorage.setItem('userLon', value3)
     }
@@ -41,17 +42,22 @@ const App = () => {
   const sendCity = (newCity, lat, lon) => {
     console.log(newCity, lat, lon)
     setCity(newCity)
+    setWeatherCity(newCity)
     setLat(lat)
     setLon(lon)
     updateStorage('city', newCity, lat, lon)
     changeStatus(true)
   }
-
+  const updateWeatherCity = (city) => {
+    console.log(city);
+    localStorage.setItem('weatherCity',  city)
+    setWeatherCity(city)
+  }
   useEffect(() => {
     isDataExist()
   },[])
   return (
-    <DataContext.Provider value={{image: '', name: myName, city: myCity, lat: lat, lon: lon}}>
+    <DataContext.Provider value={{image: '', name: myName, city: myCity, lat: lat, lon: lon, weatherCity: weatherCity, updateWeatherCity: updateWeatherCity}}>
       <Background classes='light background'>
         <NotifyContainer/>
         {status ? <AppScheme/> : <Setup sendName={sendName} sendCity={sendCity}/>}

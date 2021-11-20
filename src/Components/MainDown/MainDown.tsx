@@ -4,9 +4,10 @@ import Focus from './Focus/Focus'
 import './styles/maindown.css'
 import { Fade } from 'react-awesome-reveal'
 
-const MainDown = () => {
+const MainDown = (props:any) => {
+    const {onClick} = props
     return (
-        <Wrapper classes='main-down'>
+        <Wrapper classes='main-down' onClick={onClick}>
             <Fade>
                 <Focus/>
             </Fade>

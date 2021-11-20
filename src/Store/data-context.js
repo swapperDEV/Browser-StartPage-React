@@ -4,6 +4,8 @@ const DataContext = createContext({
     image: '',
     name: '',
     city: '',
+    weatherCity: '',
+    updateWeatherCity: () => {},
     lat: '',
     lon: '',
 })

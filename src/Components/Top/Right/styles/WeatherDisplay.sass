@@ -1,0 +1,87 @@
+.weatherDisplay
+    position: relative
+    background-color: white
+    margin-right: 5px
+    border-radius: 5px
+    min-width: 300px
+    align-self: flex-start
+    color: black
+    padding: 15px
+    .inputCity
+        border-bottom: 1px solid gray
+        display: flex
+        justify-content: center
+        align-items: center
+        .changeCityName
+            flex-grow: 1
+            border: 0px solid white    
+            outline: none
+            font-size: 20px
+        .icon
+            color: gray
+            cursor: pointer
+            padding: 5px
+            font-size: 20px    
+    .edit
+        color: gray
+        opacity: 0
+        transition: 0.1s ease
+        font-size: 15px
+        padding-left: 5px
+    i,p,div
+        padding: 0px
+        margin: 0px
+    .city
+        font-size: 23px
+        cursor: pointer
+    .close
+        position: absolute
+        right: 3%
+        cursor: pointer
+        opacity: 0
+        transition: 0.1s ease
+        color: gray
+        top: 3%
+    .city:hover .edit
+        opacity: 1
+    .description
+        font-size: 17px
+        color: gray
+    svg
+        width: 60px
+        height: 60px
+    .box 
+        display: flex
+        flex-direction: row
+        align-items: center
+        justify-content: flex-start
+        .tempBox
+            flex-basis: 50%
+            display: flex
+            align-items: center
+            p
+                padding-left: 5px
+                font-size: 43px
+                
+        .pressureBox
+            flex-basis: 50%
+            height: 100%
+            display: flex
+            justify-content: flex-end
+            align-items: flex-end
+            div
+.weatherOpacity
+    .box,.nextDays
+        filter: blur(2px)
+.triagle
+    position: absolute
+    font-size: 30px
+    color: white
+    top: -10px
+    right: 10%
+.weatherDisplay:hover .close
+    opacity: 1
+@media (max-width: 1000px)
+    .weatherDisplay
+        margin-right: 30px
+

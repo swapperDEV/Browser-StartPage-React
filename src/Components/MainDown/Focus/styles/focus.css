@@ -133,6 +133,12 @@
   }
 }
 
+@media (max-width: 800px) {
+  .main-down .focus {
+    font-size: 20px;
+  }
+}
+
 @-webkit-keyframes viewIt {
   0% {
     opacity: 0;

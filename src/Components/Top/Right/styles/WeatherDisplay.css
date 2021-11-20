@@ -1,0 +1,155 @@
+.weatherDisplay {
+  position: relative;
+  background-color: white;
+  margin-right: 5px;
+  border-radius: 5px;
+  min-width: 300px;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  color: black;
+  padding: 15px;
+}
+
+.weatherDisplay .inputCity {
+  border-bottom: 1px solid gray;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.weatherDisplay .inputCity .changeCityName {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  border: 0px solid white;
+  outline: none;
+  font-size: 20px;
+}
+
+.weatherDisplay .inputCity .icon {
+  color: gray;
+  cursor: pointer;
+  padding: 5px;
+  font-size: 20px;
+}
+
+.weatherDisplay .edit {
+  color: gray;
+  opacity: 0;
+  -webkit-transition: 0.1s ease;
+  transition: 0.1s ease;
+  font-size: 15px;
+  padding-left: 5px;
+}
+
+.weatherDisplay i, .weatherDisplay p, .weatherDisplay div {
+  padding: 0px;
+  margin: 0px;
+}
+
+.weatherDisplay .city {
+  font-size: 23px;
+  cursor: pointer;
+}
+
+.weatherDisplay .close {
+  position: absolute;
+  right: 3%;
+  cursor: pointer;
+  opacity: 0;
+  -webkit-transition: 0.1s ease;
+  transition: 0.1s ease;
+  color: gray;
+  top: 3%;
+}
+
+.weatherDisplay .city:hover .edit {
+  opacity: 1;
+}
+
+.weatherDisplay .description {
+  font-size: 17px;
+  color: gray;
+}
+
+.weatherDisplay svg {
+  width: 60px;
+  height: 60px;
+}
+
+.weatherDisplay .box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.weatherDisplay .box .tempBox {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.weatherDisplay .box .tempBox p {
+  padding-left: 5px;
+  font-size: 43px;
+}
+
+.weatherDisplay .box .pressureBox {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.weatherOpacity .box, .weatherOpacity .nextDays {
+  -webkit-filter: blur(2px);
+          filter: blur(2px);
+}
+
+.triagle {
+  position: absolute;
+  font-size: 30px;
+  color: white;
+  top: -10px;
+  right: 10%;
+}
+
+.weatherDisplay:hover .close {
+  opacity: 1;
+}
+
+@media (max-width: 1000px) {
+  .weatherDisplay {
+    margin-right: 30px;
+  }
+}
+/*# sourceMappingURL=WeatherDisplay.css.map */

@@ -5,9 +5,10 @@ import MessageTime from './containers/MessageTime'
 import Wrapper from '../../UI/Wrapper'
 import { Fade } from 'react-awesome-reveal'
 
-const Main = () => {
+const Main = (props:any) => {
+    const {onClick} = props
     return (
-        <Wrapper classes='main'>
+        <Wrapper classes='main' onClick={onClick}>
             <Fade cascade>
                 <Time/>
                 <MessageTime/>

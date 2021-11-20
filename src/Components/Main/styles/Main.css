@@ -55,4 +55,13 @@
 .css-rj6k42 {
   z-index: -1;
 }
+
+@media (max-height: 800px) {
+  .main .clock {
+    font-size: 450%;
+  }
+  .messageBox .messageTime {
+    font-size: 150%;
+  }
+}
 /*# sourceMappingURL=Main.css.map */

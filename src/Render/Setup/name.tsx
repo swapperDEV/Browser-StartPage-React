@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import './box.css'
 import { Fade } from "react-awesome-reveal";
+import { notify } from '../../UI/Notification/ErrorNotify';
 
 const NameBox = (props:any) => {
     const [input, setInput] = useState(props.startValue)
@@ -10,17 +11,12 @@ const NameBox = (props:any) => {
             if(input.length > 3) {
                 props.method(input)
             } else{
-                errorSet('error')
+                notify('Too short name!')
             }
         }
     }
     const handleSetInput = (e:any) => {
         setInput(e.target.value)
-        if(input.length <3) {
-            errorSet('error')
-        } else {
-            errorSet('')
-        }
     }
     const handleReset = () => {
         setInput(props.startValue)
@@ -30,7 +26,7 @@ const NameBox = (props:any) => {
             <Fade>
                 <b>{props.text}</b>
                 <div className='formInput'>
-                    <input value={input} onChange={handleSetInput} onKeyPress={sendForm} placeholder={props.placeholder} className={error} maxLength={props.maxLength}/>
+                    <input value={input} onChange={handleSetInput} onKeyPress={sendForm} placeholder={props.placeholder} maxLength={props.maxLength}/>
                     {props.type === 'city' && <i onClick={handleReset} className="fas fa-location-arrow key"></i>}
                     {props.type === 'name' && <i onClick={handleReset} className="fas fa-times key"></i>}
                 </div>

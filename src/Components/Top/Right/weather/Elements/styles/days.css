@@ -1,0 +1,63 @@
+.weather {
+  z-index: 2;
+}
+
+.nextDays {
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center !important;
+      -ms-flex-pack: center !important;
+          justify-content: center !important;
+  -webkit-box-align: center !important;
+      -ms-flex-align: center !important;
+          align-items: center !important;
+  z-index: 5;
+}
+
+.nextDays .oneOfFiveDays {
+  text-align: center;
+  line-height: 20px;
+  padding: 15px;
+}
+
+.nextDays .oneOfFiveDays svg {
+  width: 30px;
+  height: 30px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.nextDays .oneOfFiveDays .dayName {
+  color: #606060;
+  font-size: 15px;
+}
+
+.nextDays .oneOfFiveDays .temp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 13px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.nextDays .oneOfFiveDays .temp p {
+  padding: 1px;
+  padding-top: 0px;
+  margin: 0px;
+}
+
+.nextDays .oneOfFiveDays .temp .min {
+  color: gray;
+}
+/*# sourceMappingURL=days.css.map */

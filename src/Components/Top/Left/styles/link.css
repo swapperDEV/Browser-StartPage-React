@@ -1,0 +1,43 @@
+.topLinks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.topLinks .search, .topLinks .link {
+  padding: 15px;
+}
+
+.topLinks .search .linkText, .topLinks .search .searchText, .topLinks .link .linkText, .topLinks .link .searchText {
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+
+.linkSettings {
+  color: black;
+  position: absolute;
+  margin: 10px;
+  min-width: 200px;
+  border-radius: 5px;
+  min-height: 150px;
+  background-color: white;
+}
+
+.linkSettings .triagle-left {
+  right: 0%;
+  left: 3%;
+}
+
+.linkSettings .closeLinks {
+  position: absolute;
+  color: gray;
+  top: 2%;
+  right: 2%;
+  z-index: 2;
+}
+
+.linkSettings .closeLinks:hover {
+  cursor: pointer;
+}
+/*# sourceMappingURL=link.css.map */
