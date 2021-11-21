@@ -1,31 +1,43 @@
 .topLinks
     display: flex
-    align-items: center
+    padding: 0
+    padding-top: 5px
+    margin: 0
     .search,.link
-        padding: 15px
+        padding: 10px
         .linkText, .searchText
             font-size: 24px
             cursor: pointer
             margin: 0
             padding: 0
         .linkText
-            border-bottom: 1px solid white
+            padding-bottom: 0px!important
+            margin-bottom: 0px!important
+            transform: translateY(4px)
+    .link
+        margin-top: 0px
+        padding-top: 0px
+        padding-right: 0px
+        margin-right: 0px
+.link
+    display: flex
+    justify-content: center
+    align-items: center
+    input
+        width: 1vw
+        opacity: 0
+.bottomLinks
+    position: absolute
 .linkSettings
     color: black
+    transition: 0.3s ease
     position: absolute
-    margin: 10px
+    margin: 5px
+    margin-left: 15px
     min-width: 200px
     border-radius: 5px
-    min-height: 150px
+    min-height: 90px
     background-color: white
     .triagle-left
         right: 0%
         left: 3%
-    .closeLinks
-        position: absolute
-        color: gray
-        top: 2%
-        right: 2%
-        z-index: 2
-    .closeLinks:hover
-        cursor: pointer

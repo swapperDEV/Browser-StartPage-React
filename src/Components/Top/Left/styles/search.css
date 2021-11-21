@@ -4,13 +4,10 @@
   display: flex;
   -webkit-transition: 0.1s ease;
   transition: 0.1s ease;
-  padding-bottom: 3px;
-  top: 3px;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  margin-top: 1px;
-  border-bottom: 1px solid transparent;
+  padding-top: 5px;
 }
 
 .searchBox .searchText {
@@ -36,7 +33,6 @@
 
 .searchBox:hover {
   cursor: pointer;
-  border-bottom: 1px solid white;
 }
 
 .searchBox:hover .searchWeb {
@@ -44,6 +40,7 @@
 }
 
 .searchWeb {
+  padding-left: 10px;
   -webkit-transition: 0.1s ease;
   transition: 0.1s ease;
   opacity: 0;
@@ -55,5 +52,51 @@
 
 .visibleSearch {
   border-bottom: 1px solid white;
+}
+
+@media (max-width: 500px) {
+  .linkText {
+    font-size: 19px !important;
+  }
+  .link {
+    padding: 0px !important;
+    margin: 0px !important;
+    margin-left: 15px !important;
+  }
+  .link input {
+    height: 30px;
+  }
+  .search {
+    padding: 0px !important;
+    margin: 0px !important;
+  }
+  .search, .link {
+    height: 30px;
+    margin-top: 10px !important;
+  }
+  .searchBox {
+    padding: 0px;
+    margin: 0px;
+    margin-left: 0px;
+    height: 30px;
+  }
+  .searchBox .searchText {
+    font-size: 16px !important;
+  }
+  .searchBox .searchInput {
+    padding-left: 8px;
+    font-size: 16px;
+    width: 20vw;
+  }
+  .searchBox .searchWeb {
+    -webkit-transform: translateX(-2px);
+            transform: translateX(-2px);
+    padding-left: 2px;
+    margin-left: 15px;
+  }
+  .obr {
+    width: 16px;
+    height: 16px;
+  }
 }
 /*# sourceMappingURL=search.css.map */

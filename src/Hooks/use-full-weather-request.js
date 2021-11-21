@@ -53,6 +53,5 @@ export const fullWeatherSearch = async (city) => {
         })
         return 0
     })}
-    console.log(daysReturned)
     return daysReturned
 }

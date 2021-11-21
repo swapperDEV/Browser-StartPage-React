@@ -2,13 +2,13 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  padding: 0;
+  padding-top: 5px;
+  margin: 0;
 }
 
 .topLinks .search, .topLinks .link {
-  padding: 15px;
+  padding: 10px;
 }
 
 .topLinks .search .linkText, .topLinks .search .searchText, .topLinks .link .linkText, .topLinks .link .searchText {
@@ -19,33 +19,55 @@
 }
 
 .topLinks .search .linkText, .topLinks .link .linkText {
-  border-bottom: 1px solid white;
+  padding-bottom: 0px !important;
+  margin-bottom: 0px !important;
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+}
+
+.topLinks .link {
+  margin-top: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  margin-right: 0px;
+}
+
+.link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.link input {
+  width: 1vw;
+  opacity: 0;
+}
+
+.bottomLinks {
+  position: absolute;
 }
 
 .linkSettings {
   color: black;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
   position: absolute;
-  margin: 10px;
+  margin: 5px;
+  margin-left: 15px;
   min-width: 200px;
   border-radius: 5px;
-  min-height: 150px;
+  min-height: 90px;
   background-color: white;
 }
 
 .linkSettings .triagle-left {
   right: 0%;
   left: 3%;
-}
-
-.linkSettings .closeLinks {
-  position: absolute;
-  color: gray;
-  top: 2%;
-  right: 2%;
-  z-index: 2;
-}
-
-.linkSettings .closeLinks:hover {
-  cursor: pointer;
 }
 /*# sourceMappingURL=link.css.map */

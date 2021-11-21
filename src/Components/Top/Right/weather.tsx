@@ -35,7 +35,6 @@ const Weather = (props:any) => {
         await changeDataInfo(data)
         let fullData:any = await fullWeatherSearch(cityName)
         let fullDataTable = []
-        console.log(fullData);
         for(let i=0; i<4; i++) {
             let objectTemperature = {
                 day: fullData.name[i],
@@ -47,7 +46,6 @@ const Weather = (props:any) => {
             }
             fullDataTable.push(objectTemperature)
         }
-        console.log(fullDataTable);
         changeFullData(fullDataTable)
     }
     const changeMoreDisplay = () => {

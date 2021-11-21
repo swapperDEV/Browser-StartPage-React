@@ -41,9 +41,9 @@
   position: absolute;
   right: 0%;
   bottom: 15px;
-  height: 300px;
+  height: 200px;
   background-color: white;
-  width: 400px;
+  width: 320px;
   margin: 0px 10px;
   border-radius: 5px;
 }
@@ -67,7 +67,7 @@
 .footer .footer-left .mainSetting {
   position: absolute;
   bottom: 15px;
-  min-width: 380px;
+  min-width: 300px;
   min-height: 300px;
   background-color: white;
   margin: 0px 10px;
@@ -130,5 +130,15 @@
   right: 4%;
   -webkit-transform: translateY(12px);
           transform: translateY(12px);
+}
+
+@media (max-width: 900px) {
+  .mainSetting {
+    min-width: 200px;
+    min-height: 200px;
+    width: 200px;
+    max-width: 200px;
+    height: 240px;
+  }
 }
 /*# sourceMappingURL=footer.css.map */

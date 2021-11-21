@@ -20,7 +20,7 @@ const ClockSetting = (prop:any) => {
         <>
             <Fade>
                 <div className='setting box arrow-top'>
-                    24-hour clock
+                    24h clock
                     <label className="switch">
                         <input type="checkbox" checked={ifChecked} onChange={handleChangeChecked}/>
                         <span className="slider round"></span>

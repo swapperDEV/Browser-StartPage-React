@@ -6,8 +6,8 @@ import ddg from '../../../Assets/search/ddg.png'
 import Bing from '../../../Assets/search/bing.png'
 import google from '../../../Assets/search/google.png'
 
-const SearchSite = [<i><img alt='error' src={Bing} width="20px" height="20px"></img></i>,
-<i><img alt='error' src={ddg} width="20px" height="20px"></img></i>,<i><img src={google} width="20px" height="20px" alt='error'></img></i>]
+const SearchSite = [<i><img src={google} width="20px" height="20px" alt='error' className='obr'></img></i>,<i><img alt='error' src={Bing} width="20px" height="20px" className='obr'></img></i>,
+<i><img alt='error' src={ddg} width="20px" height="20px" className='obr'></img></i>]
 
 const Search = () => {
     let actSearchSite:any = localStorage.getItem('searchSite')
@@ -32,11 +32,11 @@ const Search = () => {
     const handleSearch = (e:any) => {
         if(e.key === 'Enter') {
             if(actSearchSite === 2) {
-                window.location.href=`https://www.google.com/search?q=${searchValue}`;
+                window.location.href=`https://www.bing.com/search?q=${searchValue}`;
             } else if(actSearchSite === 1) {
                 window.location.href=`https://duckduckgo.com/?q=${searchValue}`;
             } else {
-                window.location.href=`https://www.bing.com/search?q=${searchValue}`;
+                window.location.href=`https://www.google.com/search?q=${searchValue}`;
             }
         }
     }
