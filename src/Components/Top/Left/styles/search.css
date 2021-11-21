@@ -89,10 +89,10 @@
     width: 20vw;
   }
   .searchBox .searchWeb {
-    -webkit-transform: translateX(-2px);
-            transform: translateX(-2px);
-    padding-left: 2px;
-    margin-left: 15px;
+    -webkit-transform: translate(-2px, 2px);
+            transform: translate(-2px, 2px);
+    padding-left: 0px;
+    margin-left: 8px;
   }
   .obr {
     width: 16px;

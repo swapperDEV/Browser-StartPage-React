@@ -33,6 +33,7 @@
   color: #ffffff;
   cursor: pointer;
   padding: 15px;
+  padding-top: 15px !important;
 }
 
 .weather .up b {
