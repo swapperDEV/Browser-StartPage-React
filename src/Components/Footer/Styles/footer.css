@@ -69,6 +69,7 @@
   bottom: 15px;
   min-width: 300px;
   min-height: 300px;
+  max-height: 300px;
   background-color: white;
   margin: 0px 10px;
   color: black;
@@ -105,6 +106,59 @@
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.footer .footer-center .locationInfo {
+  padding-bottom: 5px;
+  margin-bottom: 0px;
+  font-size: 24px;
+}
+
+.footer .footer-center .quotes {
+  font-size: 17px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  cursor: hover;
+}
+
+.footer .footer-center .quoteAuthor {
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  opacity: 0;
+  padding-bottom: 10px;
+  margin: 0px;
+  color: #dbd3d3;
+}
+
+.footer .footer-center .quotes:hover {
+  cursor: pointer;
+}
+
+.footer .footer-center .quotesAuthorActive {
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  opacity: 1;
+}
+
+.footer .footer-center .fa-sync-alt {
+  font-size: 13px;
+  cursor: pointer;
 }
 
 .footer .footer-right {
@@ -139,6 +193,14 @@
     width: 200px;
     max-width: 200px;
     height: 240px;
+  }
+  .footer .footer-center .locationInfo {
+    font-size: 17px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+  }
+  .footer .footer-center .quotes {
+    font-size: 10px;
   }
 }
 /*# sourceMappingURL=footer.css.map */

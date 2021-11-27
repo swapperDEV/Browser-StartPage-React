@@ -19,7 +19,7 @@ const App = () => {
     if(localStorage.getItem("userName") === null || localStorage.getItem("userName") === '' || localStorage.getItem("userCity") === null || localStorage.getItem("userCity") === '' || localStorage.getItem('userName') === 'null') {
       console.log('null')
       changeStatus(false)
-    } else {
+    }  else {
       changeStatus(true)
     }
   }
@@ -47,6 +47,9 @@ const App = () => {
     setLat(lat)
     setLon(lon)
     updateStorage('city', newCity, lat, lon)
+    registerCompleted()
+  }
+  const registerCompleted = () => {
     changeStatus(true)
   }
   const updateWeatherCity = (city) => {
@@ -61,7 +64,7 @@ const App = () => {
     <DataContext.Provider value={{image: '', name: myName, city: myCity, lat: lat, lon: lon, weatherCity: weatherCity, updateWeatherCity: updateWeatherCity}}>
       <Background classes='light background'>
         <NotifyContainer/>
-        {status ? <AppScheme/> : <Setup sendName={sendName} sendCity={sendCity}/>}
+        {status ? <AppScheme/> : <Setup sendName={sendName} sendCity={sendCity} registerCompleted={registerCompleted}/>}
       </Background>
     </DataContext.Provider>
   );

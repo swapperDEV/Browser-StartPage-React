@@ -42,12 +42,19 @@ export const fullWeatherSearch = async (city) => {
     if(data !== undefined) {
     await data.map((e) => {
         dayToSearchTable.map((date) => {
-            if(e.dt_txt === date + ' 12:00:00') {
-            daysReturned.day.push(e)
-            let name = getDateName(date)
-            daysReturned.name.push(name)
-        } 
-            if(e.dt_txt === date + ' 00:00:00') {
+            let validator = date.slice(-2)
+            let dateString = date
+            if(validator.charAt(0) === '-') {
+                let last = dateString.slice(-1)
+                let replaceString = '-0' + last
+                dateString = dateString.replace(/.{0,2}$/, '') + replaceString
+            }
+            if(e.dt_txt === dateString + ' 12:00:00') {
+                daysReturned.day.push(e)
+                let name = getDateName(date)
+                daysReturned.name.push(name)
+            } 
+            if(e.dt_txt === dateString + ' 00:00:00') {
                 daysReturned.night.push(e)}
                 return 0
         })

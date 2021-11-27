@@ -10,13 +10,19 @@ import { getUserGps } from '../Functions/getGps'
 import { getCityFromCord } from '../Functions/getCityFromCord'
 
 const Setup = (props:any) => {
+    const { registerCompleted } = props
     const data = useContext(DataContext)
     const [city, changeCity] = useState<any>('')
     const [step, setStep] = useState('name')
 
     const nameSend = (value:string) => {
         props.sendName(value)
-        setStep('city')
+        if(localStorage.getItem('userCity') !== null && localStorage.getItem('userCity') !== undefined && localStorage.getItem('userCity') !== '') {
+            setStep('')
+            registerCompleted()
+        } else {
+            setStep('city')
+        }
     }
     const locationSend = (value:string) => {
         const URL = API.WEATHER_LINK + value + API.WEATHER_KEY
@@ -36,7 +42,6 @@ const Setup = (props:any) => {
         await changeCity(city)
     }
     const getCity = () => {
-        console.log('search city');
         getUserGps().then(data=>{
             console.log(data);
             if(data.city === null || data.city === 'null' || data.city === undefined || data.city === 'undefined') {
@@ -49,6 +54,9 @@ const Setup = (props:any) => {
     }
     useEffect(() => {
         getCity()
+        if(localStorage.getItem('userName') !== null && localStorage.getItem('userName') !== undefined && localStorage.getItem('userName') !== '') {
+            setStep('city')
+        }
     }, [])
     return (
     <>

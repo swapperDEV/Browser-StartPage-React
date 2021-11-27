@@ -32,9 +32,9 @@ const Search = () => {
     const handleSearch = (e:any) => {
         if(e.key === 'Enter') {
             if(actSearchSite === 2) {
-                window.location.href=`https://www.bing.com/search?q=${searchValue}`;
-            } else if(actSearchSite === 1) {
                 window.location.href=`https://duckduckgo.com/?q=${searchValue}`;
+            } else if(actSearchSite === 1) {
+                window.location.href=`https://www.bing.com/search?q=${searchValue}`;
             } else {
                 window.location.href=`https://www.google.com/search?q=${searchValue}`;
             }

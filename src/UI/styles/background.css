@@ -1,6 +1,18 @@
 .newBg {
     overflow: hidden;
+    z-index: -2;
+    position: absolute;
+    width: auto;
+    background-size: cover;
+    height: auto;
+    min-width: 100%;
+    opacity: 1;
+    min-height: 100%;
+    background-position: center;
+}
+.grayBg {
     z-index: -1;
+    overflow: hidden;
     position: absolute;
     width: auto;
     background-size: cover;

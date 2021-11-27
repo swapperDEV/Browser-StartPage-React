@@ -1,0 +1,72 @@
+.settingContent
+    display: flex
+    height: 300px
+    transition: 0.3s ease
+    min-width: 400px
+    position: relative
+    overflow: hidden
+    .category
+        min-height: 300px
+    .categoryContent
+        overflow-x: hidden
+        overflow-y: scroll
+        flex-grow: 1
+        transition: 0.3s ease
+        justify-content: center
+        align-items: center
+        flex-direction: column
+        padding-right: 15px
+        padding-top: 15px
+        padding-left: 15px
+        text-align: center
+        .git
+            cursor: pointer
+            transition: 0.1s ease
+        .git:hover
+            transform: scale(1.1)
+        p
+            padding: 0
+            margin: 0
+        .settingName
+            font-size: 25px
+        .settingDescription
+            color: gray
+            margin-bottom: 40px
+        .settingList
+            padding-left: 0px
+            list-style-type: none
+            text-align: left
+            display: flex
+            flex-direction: column
+            justify-content: center
+            .listLi
+                display: flex
+                margin-top: 2px
+                margin-bottom: 5px
+                padding: 5px
+                border-bottom: 1px solid lightgray
+                span
+                    flex-basis: 80%
+                .icon
+                    display: flex
+                    align-items: center
+                    flex-basis: 20%
+            .listLi:hover
+                cursor: pointer
+                background-color: lightgray
+.category
+    display: flex
+    padding-right: 25px
+    padding-top: 15px
+    padding-left: 15px
+    flex-direction: column
+    border-right: 1px solid lightgray
+    p
+        cursor: pointer
+        padding-bottom: 2px
+        padding-top: 2px
+        margin-top: 0px
+        margin-bottom: 0px
+        color: gray
+.active
+    color: #222222!important

@@ -9,7 +9,7 @@ const FooterRight = () => {
         <Wrapper classes='footer-right'>
             {widgetDisplay && <View/>}
             <Wrapper classes='widgetText'>
-                <p className='widgetOpen' onClick={handleWidgetDisplay}>Widget</p>
+                <p className='widgetOpen' onClick={handleWidgetDisplay}>W</p>
             </Wrapper>
         </Wrapper>
     )
