@@ -5,11 +5,14 @@ import Icon from '../../../UI/Icon'
 import ddg from '../../../Assets/search/ddg.png'
 import Bing from '../../../Assets/search/bing.png'
 import google from '../../../Assets/search/google.png'
+import { useContext } from 'react'
+import FuncDisplayContext from '../../../Store/funcdisplay-context'
 
 const SearchSite = [<i><img src={google} width="20px" height="20px" alt='error' className='obr'></img></i>,<i><img alt='error' src={Bing} width="20px" height="20px" className='obr'></img></i>,
 <i><img alt='error' src={ddg} width="20px" height="20px" className='obr'></img></i>]
 
 const Search = () => {
+    const displayCtx = useContext(FuncDisplayContext)
     let actSearchSite:any = localStorage.getItem('searchSite')
     actSearchSite = parseInt(actSearchSite)
     if(actSearchSite >= 0) {
@@ -44,13 +47,18 @@ const Search = () => {
         changeSearchValue(e.target.value)
     }
     return (
-        <Wrapper classes='searchBox visibleSearch'>
-            <p className='searchText'><Icon classes="fas fa-search"/></p>
-            <input className='searchInput' value={searchValue} onChange={handleChangeValue} onKeyPress={handleSearch}/>
-            <Wrapper classes='searchWeb' onClick={switchSearchSite}>
-                {SearchSite[activeSearchSite]}
+        <>
+            {
+            displayCtx.display.search &&        
+            <Wrapper classes='searchBox visibleSearch'>
+                <p className='searchText'><Icon classes="fas fa-search"/></p>
+                <input className='searchInput' value={searchValue} onChange={handleChangeValue} onKeyPress={handleSearch}/>
+                <Wrapper classes='searchWeb' onClick={switchSearchSite}>
+                    {SearchSite[activeSearchSite]}
+                </Wrapper>
             </Wrapper>
-        </Wrapper>
+            }
+        </>
     )
 }
 

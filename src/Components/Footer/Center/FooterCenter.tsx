@@ -2,9 +2,11 @@ import React, {useContext, useEffect, useState} from 'react'
 import Wrapper from '../../../UI/Wrapper'
 import PhotoContext from '../../../Store/photo-data-context'
 import { Fade } from 'react-awesome-reveal'
+import FuncDisplayContext from '../../../Store/funcdisplay-context'
 
 const FooterCenter = () => {
     const phtCtx = useContext(PhotoContext)
+    const displayCtx = useContext(FuncDisplayContext)
     const [actQuote, setQuote] = useState<any>({
         content: '',
         author: ''
@@ -37,10 +39,18 @@ const FooterCenter = () => {
         <Wrapper classes='footer-center' onMouseLeave={unDisplayAuthor}>
             <Fade>
                 <div onMouseEnter={displayAuthor}>
-                    <p className='locationInfo'>Photo from: {phtCtx.location}</p>
-                    <p className='quotes'>{actQuote.content}
-                    </p>
-                    <p className={authorClass}>{actQuote.author} <i className="fas fa-sync-alt" onClick={newQuote}></i></p>
+                    {
+                        displayCtx.display.photoinfo && 
+                        <p className='locationInfo'>Photo from: {phtCtx.location}</p>
+                    }
+                    {
+                        displayCtx.display.quotes &&
+                        <>
+                            <p className='quotes'>{actQuote.content}
+                            </p>
+                            <p className={authorClass}>{actQuote.author} <i className="fas fa-sync-alt" onClick={newQuote}></i></p>
+                        </>
+                    }
                 </div>
             </Fade>
         </Wrapper>

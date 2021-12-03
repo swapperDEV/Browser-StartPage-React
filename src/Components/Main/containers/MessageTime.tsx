@@ -2,12 +2,11 @@ import React, { useContext, useState, useEffect} from 'react'
 import DataContext from '../../../Store/data-context'
 import Wrapper from '../../../UI/Wrapper'
 import { getTime } from '../../../Functions/getTime'
+import FuncDisplayContext from '../../../Store/funcdisplay-context'
 
 const MessageTime = (props:any) => {
     const [message, changeMessage] = useState('Hello')
     const ctx = useContext(DataContext)
-
-
     const timeMessageSearch = () => {
         let time:any = getTime()
         time = time.slice(0, 2)
@@ -23,10 +22,15 @@ const MessageTime = (props:any) => {
     useEffect(() => {
         timeMessageSearch()
     },[])
+    const displayCtx = useContext(FuncDisplayContext)
     return (
+        <>
         <Wrapper classes='messageBox'>
-            <p className='messageTime'>{message}, {ctx.name}.</p>
+            {displayCtx.display.timemessage ?
+            <p className='messageTime'>{message}, {ctx.name}.</p>            
+            : <p className='messageTime'>        -</p>}
         </Wrapper>
+        </>
     )
 }
 

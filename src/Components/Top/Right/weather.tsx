@@ -9,10 +9,12 @@ import { fullWeatherSearch } from '../../../Hooks/use-full-weather-request';
 import WeatherDisplay from './weather/WeatherDisplay';
 import { getIcon } from '../../../Functions/weatherGetIcon';
 import ModalContext from '../../../Store/modal-context';
+import FuncDisplayContext from '../../../Store/funcdisplay-context';
 
 const Weather = (props:any) => {
     const data = useContext(DataContext)
     const ctx = useContext(ModalContext)
+    const displayCtx = useContext(FuncDisplayContext)
     const {weatherVisible, toggleWeatherModal} = ctx
     let [city, changeCity] = useState(data.weatherCity)
     const [dataInfo, changeDataInfo] = useState<any>({temp: 0})
@@ -64,7 +66,8 @@ const Weather = (props:any) => {
 
     return (
         <>
-            <Wrapper classes='weather'>
+            {displayCtx.display.weather ?
+                <Wrapper classes='weather'>
                 <Fade>
                     <Wrapper classes='weatherChild' onClick={changeMoreDisplay}>
                         <Wrapper classes='up'><i className="fas fa-cloud-sun"></i> <b>{dataInfo.temp}°</b></Wrapper>
@@ -75,6 +78,9 @@ const Weather = (props:any) => {
                     </Wrapper>
                 </Fade>
             </Wrapper>
+            : 
+            <Wrapper classes='weather'>
+            </Wrapper>}
         </>
     )
 }

@@ -6,9 +6,11 @@ import { Fade } from 'react-awesome-reveal';
 import ModalContext from '../../../Store/modal-context';
 import Search from './search';
 import LinksView from './links/LinksView';
+import FuncDisplayContext from '../../../Store/funcdisplay-context';
 
 const Links = (props:any) => {
     const ctx = useContext(ModalContext)
+    const displayCtx = useContext(FuncDisplayContext)
     const {settingVisible, toggleLinksModal} = ctx
     const handleSettingVisible = () => {
         toggleLinksModal()
@@ -17,10 +19,12 @@ const Links = (props:any) => {
         <>
         <Wrapper classes='links'>
             <Wrapper classes='topLinks'>
-                <Wrapper classes='link'>
-                    <p className='linkText' onClick={handleSettingVisible}>Links</p>
-                    <input/>
-                </Wrapper>
+                {
+                    displayCtx.display.links &&                 <Wrapper classes='link'>
+                        <p className='linkText' onClick={handleSettingVisible}>Links</p>
+                        <input/>
+                    </Wrapper>
+                }
                 <Wrapper classes='search'>
                     <Search/>
                 </Wrapper>

@@ -8,6 +8,8 @@ import FocusDisplay from './FocusDisplay'
 import FocusSetting from './FocusSetting'
 import SettingButton from './SettingButton'
 import { notify } from '../../../UI/Notification/ErrorNotify'
+import { useContext } from 'react'
+import FuncDisplayContext from '../../../Store/funcdisplay-context'
 
 const Focus = () => {
     const [todayFocus, changeFocus] = useState<any>('')
@@ -87,23 +89,29 @@ const Focus = () => {
                 }
         }}
     },[])
+    const displayCtx = useContext(FuncDisplayContext)
     return (
         <Wrapper classes='focus'>
-            {todayFocus !== '' ? 
-                <>
-                    <Wrapper classes='viewFocus' onMouseLeave={handleCloseSetting}>
-                        <FocusDisplay isCompleted={isCompleted} todayFocus={todayFocus}/>
-                        <CompletedMessage isCompleted={isCompleted}/>
-                        <Wrapper>
-                            <SettingButton handleChangeSettingDisplay={handleChangeSettingDisplay}/>
-                            <FocusSetting focusSetting={focusSetting} handleDoneFocus={handleDoneFocus} isCompleted={isCompleted} handlePreviousFocus={handlePreviousFocus} handleClearFocus={handleClearFocus}/>
-                        </Wrapper>
-                    </Wrapper> 
-                </>
-            : 
-                <>
-                    <FocusEnter method={fromInput}/>
-                </>
+            {
+               displayCtx.display.focus && 
+               <>
+                    {todayFocus !== '' ? 
+                    <>
+                        <Wrapper classes='viewFocus' onMouseLeave={handleCloseSetting}>
+                            <FocusDisplay isCompleted={isCompleted} todayFocus={todayFocus}/>
+                            <CompletedMessage isCompleted={isCompleted}/>
+                            <Wrapper>
+                                <SettingButton handleChangeSettingDisplay={handleChangeSettingDisplay}/>
+                                <FocusSetting focusSetting={focusSetting} handleDoneFocus={handleDoneFocus} isCompleted={isCompleted} handlePreviousFocus={handlePreviousFocus} handleClearFocus={handleClearFocus}/>
+                            </Wrapper>
+                        </Wrapper> 
+                    </>
+                : 
+                    <>
+                        <FocusEnter method={fromInput}/>
+                    </>
+                }
+            </>
             }
         </Wrapper>
     )

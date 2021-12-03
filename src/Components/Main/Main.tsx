@@ -11,7 +11,8 @@ const Main = (props:any) => {
         <Wrapper classes='main' onClick={onClick}>
             <Fade cascade>
                 <Time/>
-                <MessageTime/>
+                    <MessageTime/>                
+    
             </Fade>
         </Wrapper>
     )

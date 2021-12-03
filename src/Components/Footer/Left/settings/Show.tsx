@@ -1,33 +1,53 @@
 import React from 'react'
 import { Slide } from 'react-awesome-reveal'
+import { useContext } from 'react'
+import FuncDisplayContext from '../../../../Store/funcdisplay-context'
+
 const Show = () => {
+    const displayCtx = useContext(FuncDisplayContext)
     const settings = [{
-        name: 'List',
-        onChange: ''
+        name: 'Links',
+        //@ts-ignore
+        onChange: () => displayCtx.changeDisplay('links'),
+        class: displayCtx.display.links && 'on' 
     },{
         name: 'Search',
-        onChange: ''
+        //@ts-ignore
+        onChange: () => displayCtx.changeDisplay('search'),
+        class: displayCtx.display.search && 'on' 
     },{
         name: 'Weather',
-        onChange: ''
+        //@ts-ignore
+        onChange: () => displayCtx.changeDisplay('weather'),
+        class: displayCtx.display.weather && 'on' 
     },{
         name: 'Widget',
-        onChange: ''
+        //@ts-ignore
+        onChange: () => displayCtx.changeDisplay('widget'),
+        class: displayCtx.display.widget && 'on' 
     },{
         name: 'Photo Info',
-        onChange: ''
+        //@ts-ignore
+        onChange: () => displayCtx.changeDisplay('photoinfo'),
+        class: displayCtx.display.photoinfo && 'on' 
     },{
         name: 'Quotes',
-        onChange: ''
+        //@ts-ignore
+        onChange: () => displayCtx.changeDisplay('quotes'),
+        class: displayCtx.display.quotes && 'on' 
     },{
         name: 'Focus',
-        onChange: ''
+        //@ts-ignore
+        onChange: () => displayCtx.changeDisplay('focus'),
+        class: displayCtx.display.focus && 'on' 
     },{
         name: 'Time Message',
-        onChange: ''
+        //@ts-ignore
+        onChange: () => displayCtx.changeDisplay('timemessage'),
+        class: displayCtx.display.timemessage && 'on' 
     }]
     let list = settings.map((listItem, index) => (
-        <span key={index} className='listLi'>
+        <span key={index} className={`listLi showLi ${listItem.class}`} onClick={listItem.onChange}>
             <span><p>{listItem.name}</p></span>
             <span className='icon switch'></span>
         </span>

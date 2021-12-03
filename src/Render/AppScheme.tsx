@@ -6,12 +6,23 @@ import MainDown from '../Components/MainDown/MainDown'
 import Top from '../Components/Top/Top'
 import Footer from '../Components/Footer/footer'
 import ModalContext from '../Store/modal-context'
+import FuncDisplayContext from '../Store/funcdisplay-context'
 
 const Scheme = () => {
     const [settingVisible, changeSettingVisible] = useState(false)
     const [weatherVisible, setWeatherVisible] = useState(false)
     const [mainSettingDisplay, changeSettingDisplay] = useState(false)
     const [widgetDisplay, changeWidgetDisplay] = useState(false)
+    const [funcDisplay, changeFuncDisplay] = useState<any>({
+        links: true,
+        search: true,
+        weather: true,
+        widget: true,
+        photoinfo: true,
+        quotes: true,
+        focus: true,
+        timemessage: true,
+    })
     const closeWeatherModal = () => {
         setWeatherVisible(false)
     }
@@ -64,6 +75,49 @@ const Scheme = () => {
             closeWidgetDisplay()
         }
     }
+    const displaySettingSave = () => {
+        localStorage.setItem("displaySettings", JSON.stringify(funcDisplay));
+    }
+    const handleChangeDisplay = (element:any) => {
+        console.log(element);
+        let actTable = funcDisplay
+        switch(element) {
+            case 'links':
+                actTable.links = !actTable.links
+                break;
+            case 'search':
+                actTable.search = !actTable.search
+                break;
+            case 'weather':
+                actTable.weather = !actTable.weather
+                break;
+            case 'widget':
+                actTable.widget = !actTable.widget
+                break;
+            case 'photoinfo':
+                actTable.photoinfo = !actTable.photoinfo
+                break;
+            case 'quotes':
+                actTable.quotes = !actTable.quotes
+                break;
+            case 'focus':
+                actTable.focus = !actTable.focus
+                break;
+            case 'timemessage':
+                actTable.timemessage = !actTable.timemessage
+                break;
+        }
+        changeFuncDisplay(actTable)
+        closeChangeSettingDisplay()
+        displaySettingSave()
+    }
+    React.useEffect(() => {
+        //@ts-ignore
+        const storageDisplaySettings = JSON.parse(localStorage.getItem("displaySettings"));
+        if(storageDisplaySettings !== null) {
+            changeFuncDisplay(storageDisplaySettings)
+        }
+    },[])
     return (
         <>
             <ModalContext.Provider value={{
@@ -76,12 +130,18 @@ const Scheme = () => {
                 weatherVisible: weatherVisible,
                 settingVisible: settingVisible,
             }}>
-                <Wrapper classes='main-menu' onClick={handleClick}>
-                    <Top/>
-                    <Main/>
-                    <MainDown/>
-                    <Footer/>
-                </Wrapper>
+                <FuncDisplayContext.Provider value={{
+                    //@ts-ignore
+                    changeDisplay: handleChangeDisplay,
+                    display: funcDisplay, 
+                }}>
+                    <Wrapper classes='main-menu' onClick={handleClick}>
+                        <Top/>
+                        <Main/>
+                        <MainDown/>
+                        <Footer/>
+                    </Wrapper>
+                </FuncDisplayContext.Provider>
             </ModalContext.Provider>
         </>
     )}

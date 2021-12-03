@@ -33,13 +33,13 @@ const General = () => {
         pageReload()
     }
     const settings = [{
-        name: 'Reset All Setting',
+        name: 'Reset All Settings',
         onClick: resetAll
     },{
         name: 'Reset Your Name',
         onClick: resetName
     },{
-        name: 'Reset Main City',
+        name: 'Reset City',
         onClick: resetCity
     }]
     let list = settings.map((listItem, index) => (

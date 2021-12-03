@@ -2,7 +2,6 @@
     display: flex
     height: 300px
     transition: 0.3s ease
-    min-width: 400px
     position: relative
     overflow: hidden
     .category
@@ -51,6 +50,8 @@
                     display: flex
                     align-items: center
                     flex-basis: 20%
+            .showLi
+                border-bottom: 1px solid #DC143C
             .listLi:hover
                 cursor: pointer
                 background-color: lightgray
@@ -70,3 +71,22 @@
         color: gray
 .active
     color: #222222!important
+
+.on
+    border-bottom: 1px solid #7FFFD4!important
+
+@media (max-width: 900px)
+    .categoryContent
+        width: 100px!important
+        min-width: 100px!important
+        padding-right: 5px!important
+        padding-top: 5px!important
+        padding-left: 5px!important
+    .settingName
+        font-size: 15px!important
+    .settingDescription
+        margin-bottom: 10px!important
+    .listLi
+        margin-top: 1px!important
+        margin-bottom: 3px!important
+        padding: 2px!important
