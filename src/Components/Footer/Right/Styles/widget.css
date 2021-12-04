@@ -1,0 +1,146 @@
+.ToDoView {
+  color: black;
+  font-size: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.ToDoView .todo__config {
+  z-index: 3;
+}
+
+.ToDoView p {
+  padding-top: 10px;
+  padding-left: 10px;
+  margin: 0px;
+}
+
+.ToDoView i {
+  margin-left: 2px;
+  font-size: 15px;
+  padding: 2px;
+  border: 1px solid lightgray;
+  border-radius: 50px;
+  background-color: lightgray;
+  text-align: center;
+}
+
+.ToDoView i:hover {
+  cursor: pointer;
+}
+
+.ToDoView .todo__change_config {
+  top: 19%;
+  background-color: lightgray;
+  display: none;
+  position: absolute;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  -webkit-transition: 0.3s 0.3s ease;
+  transition: 0.3s 0.3s ease;
+  opacity: 0;
+  margin: 10px;
+}
+
+.ToDoView .todo__change_config .todo__change_lists {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+  font-size: 15px;
+  padding-bottom: 10px;
+}
+
+.ToDoView .todo__change_config .todo__change_lists li {
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.ToDoView .todo__change_config .todo__change_lists .addNew {
+  font-size: 13px;
+}
+
+.ToDoView .todo__change_config .todo__change_lists .addNew i {
+  font-size: 13px;
+}
+
+.ToDoView .todo_change_active {
+  display: block;
+  opacity: 1;
+}
+
+.ToDoView .todo__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-y: scroll;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: center;
+}
+
+.ToDoView .todo__list .nothing__todo {
+  color: gray;
+}
+
+.ToDoView .todo__list .nothing__todo button {
+  background-color: lightgray;
+  cursor: pointer;
+  border: 1px solid lightgray;
+  color: black;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.ToDoView .new__todo_form {
+  padding: 10px;
+}
+
+.ToDoView .new__todo_form input {
+  font-size: 17px;
+  color: black;
+  border: 0px solid white;
+  outline: none;
+}
+
+.ToDoView .todo__display {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.ToDoView .todo__display ul {
+  width: 100%;
+  list-style-type: none;
+  text-align: left;
+}
+
+.ToDoView .todo__display ul .Todo__element {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 5px;
+}
+
+.ToDoView .todo__display ul .Todo__element i {
+  font-size: 10px;
+  margin-left: 5px;
+}
+/*# sourceMappingURL=widget.css.map */

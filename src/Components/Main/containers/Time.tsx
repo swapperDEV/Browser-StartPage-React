@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import '../styles/Time.css'
 import ClockSetting from './ClockSetting'
-import { getTimeUs } from '../../../Functions/getTimeUS'
+import { getTimeUs } from '../../../Functions/getTimeUSUK'
 import { getTimeEu } from '../../../Functions/getTimeEu'
 
 const Time = (props:any) => {
@@ -58,11 +58,11 @@ const Time = (props:any) => {
         timeRead()
     },[])
     return (
-        <div className='clockBox'>
+        <div className='clockBox' onMouseLeave={exitClockSetting}>
             <p className='clock'>
                 {time}
             </p>
-            <div className='settingBox'  onMouseLeave={exitClockSetting}>
+            <div className='settingBox'>
                 <i className="fas fa-ellipsis-h settingClock" onClick={settingClock}></i>
                 {clockSetting && <ClockSetting method={updateTime}/>}
             </div>

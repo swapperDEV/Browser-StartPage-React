@@ -1,0 +1,88 @@
+.ToDoView
+    color: rgba(0,0,0,1)
+    font-size: 20px
+    display: flex
+    flex-direction: column
+    height: 100%
+    width: 100%
+    .todo__config
+        z-index: 3
+    p
+        padding-top: 10px
+        padding-left: 10px
+        margin: 0px
+    i
+        margin-left: 2px
+        font-size: 15px
+        padding: 2px
+        border: 1px solid lightgray
+        border-radius: 50px
+        background-color: lightgray
+        text-align: center
+    i:hover
+        cursor: pointer
+    .todo__change_config
+        top: 19%
+        background-color: lightgray
+        display: none
+        position: absolute
+        border: 1px solid lightgray
+        border-radius: 10px
+        transition: 0.3s 0.3s ease
+        opacity: 0
+        margin: 10px
+        .todo__change_lists
+            margin: 0px
+            padding: 0px
+            list-style-type: none
+            font-size: 15px
+            padding-bottom: 10px
+            li
+                padding-top: 10px
+                padding-right: 10px
+                padding-left: 10px
+            .addNew
+                font-size: 13px
+                i
+                    font-size: 13px
+    .todo_change_active
+        display: block
+        opacity: 1
+    .todo__list
+        display: flex
+        overflow-y: scroll
+        justify-content: center
+        align-items: center
+        flex-grow: 1
+        text-align: center
+        .nothing__todo
+            color: gray
+            button
+                background-color: lightgray
+                cursor: pointer
+                border: 1px solid lightgray
+                color: black
+                padding: 5px
+                border-radius: 5px
+    .new__todo_form
+        padding: 10px
+        input
+            font-size: 17px
+            color: black
+            border: 0px solid white
+            outline: none
+    .todo__display
+        width: 100%
+        height: 100%
+        overflow: hidden
+        ul
+            width: 100%
+            list-style-type: none
+            text-align: left
+            .Todo__element
+                display: flex
+                align-items: center
+                padding-top: 5px
+                i
+                    font-size: 10px
+                    margin-left: 5px

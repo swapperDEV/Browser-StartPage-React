@@ -13,7 +13,7 @@ const FooterRight = () => {
             {widgetDisplay && <View/>}
             {displayCtx.display.widget && 
             <Wrapper classes='widgetText'>
-                <p className='widgetOpen' onClick={handleWidgetDisplay}>W</p>
+                <p className='widgetOpen' onClick={handleWidgetDisplay}><i className="fas fa-clipboard-list"></i></p>
             </Wrapper>
             }
         </Wrapper>
