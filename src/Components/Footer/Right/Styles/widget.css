@@ -37,7 +37,7 @@
 }
 
 .ToDoView .todo__change_config {
-  top: 19%;
+  top: 11%;
   background-color: lightgray;
   display: none;
   position: absolute;
@@ -49,6 +49,11 @@
   margin: 10px;
 }
 
+.ToDoView .todo__change_config i {
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
 .ToDoView .todo__change_config .todo__change_lists {
   margin: 0px;
   padding: 0px;
@@ -57,10 +62,24 @@
   padding-bottom: 10px;
 }
 
+.ToDoView .todo__change_config .todo__change_lists .todo__input {
+  margin-top: 20px;
+  background-color: transparent;
+  border: 0px solid white;
+  border-bottom: 1px solid gray;
+  width: 70%;
+  margin-left: 10px;
+  outline: none;
+}
+
 .ToDoView .todo__change_config .todo__change_lists li {
   padding-top: 10px;
   padding-right: 10px;
   padding-left: 10px;
+}
+
+.ToDoView .todo__change_config .todo__change_lists li:hover {
+  cursor: pointer;
 }
 
 .ToDoView .todo__change_config .todo__change_lists .addNew {
@@ -80,7 +99,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  overflow-y: scroll;
+  overflow: hidden;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -120,11 +139,14 @@
 .ToDoView .todo__display {
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .ToDoView .todo__display ul {
   width: 100%;
+  margin-top: 10px;
+  padding-left: 15px;
   list-style-type: none;
   text-align: left;
 }
@@ -142,5 +164,37 @@
 .ToDoView .todo__display ul .Todo__element i {
   font-size: 10px;
   margin-left: 5px;
+}
+
+.ToDoView .todo__display ul .Todo__element .liIcon {
+  background-color: transparent;
+  border: 0px solid white;
+  color: gray;
+  margin-top: auto;
+  margin-bottom: 4px;
+}
+
+.ToDoView .todo__display ul .Todo__el_complete {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.error {
+  opacity: 0;
+}
+
+.resetP {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.rotated {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+
+.fa-chevron-down {
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
 }
 /*# sourceMappingURL=widget.css.map */

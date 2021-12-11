@@ -49,6 +49,7 @@ const Background = (props: any) => {
     const randomizeBackground = () => {
         let random:number = Math.floor(Math.random()*backgrounds.length+1); 
         setBackground(backgrounds[random-1])
+        setBackground(backgrounds[0])
     }
     useEffect(() => {
         randomizeBackground()
