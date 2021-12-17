@@ -31,10 +31,30 @@
   font-size: 24px;
 }
 
-.footer .footer-right .widgetText p {
+.footer .footer-right .widgetText div {
   cursor: pointer;
   margin: 0px;
   padding: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 2px;
+}
+
+.footer .footer-right .widgetText div i {
+  margin-left: 15px;
+  -webkit-transition: 0.1s ease;
+  transition: 0.1s ease;
+}
+
+.footer .footer-right .widgetText div i:hover {
+  color: gray;
+}
+
+.footer .footer-right .widgetText div .actFlex {
+  -webkit-box-ordinal-group: 1000;
+      -ms-flex-order: 999;
+          order: 999;
 }
 
 .footer .footer-right .widgetView {

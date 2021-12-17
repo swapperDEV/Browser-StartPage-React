@@ -20,6 +20,7 @@ const General = () => {
         localStorage.removeItem('focusDate')
         localStorage.removeItem('focusComplete')
         localStorage.removeItem('clockType24')
+        localStorage.removeItem("listData")
         pageReload()
     }
     const resetName = () => {
