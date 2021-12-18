@@ -4,7 +4,7 @@ import './styles/Scheme.css'
 import Main from '../Components/Main/Main'
 import MainDown from '../Components/MainDown/MainDown'
 import Top from '../Components/Top/Top'
-import Footer from '../Components/Footer/Footer'
+import Footer from '../Components/Footer/footer'
 import ModalContext from '../Store/modal-context'
 import FuncDisplayContext from '../Store/funcdisplay-context'
 
