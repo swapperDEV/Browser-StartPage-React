@@ -1,6 +1,6 @@
 import React from 'react'
 import Wrapper from '../../../../../UI/Wrapper'
-import { getIcon } from '../../../../../Functions/weatherGetIcon'
+import { getIcon } from '../../../../../UI/weatherGetIcon'
 import Icon from '../../../../../UI/Icon'
 
 const Daily = (props:any) => {

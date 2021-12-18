@@ -4,7 +4,7 @@ import './styles/Scheme.css'
 import Main from '../Components/Main/Main'
 import MainDown from '../Components/MainDown/MainDown'
 import Top from '../Components/Top/Top'
-import Footer from '../Components/Footer/footer'
+import Footer from '../Components/Footer/Footer'
 import ModalContext from '../Store/modal-context'
 import FuncDisplayContext from '../Store/funcdisplay-context'
 
@@ -36,7 +36,7 @@ const Scheme = () => {
         changeWidgetDisplay(false)
     }
     const toggleWeatherModal = () => {
-        if(weatherVisible === false) {
+        if(!weatherVisible) {
             closeLinksModal()
             closeChangeSettingDisplay()
             closeWidgetDisplay()
@@ -44,7 +44,7 @@ const Scheme = () => {
         setWeatherVisible(!weatherVisible)    
     }
     const toggleLinksModal = () => {
-        if(settingVisible === false) {
+        if(!settingVisible) {
             closeWeatherModal()
             closeChangeSettingDisplay()
             closeWidgetDisplay()
@@ -52,7 +52,7 @@ const Scheme = () => {
         changeSettingVisible(!settingVisible)
     }
     const handleWidgetDisplay = () => {
-        if(widgetDisplay === false) {
+        if(!widgetDisplay) {
             closeWeatherModal()
             closeChangeSettingDisplay()
             closeLinksModal()
@@ -60,7 +60,7 @@ const Scheme = () => {
         changeWidgetDisplay(!widgetDisplay)
     }
     const handleChangeSettingDisplay = () => {
-        if(mainSettingDisplay === false) {
+        if(!mainSettingDisplay) {
             closeWeatherModal()
             closeLinksModal()
             closeWidgetDisplay()
@@ -78,7 +78,7 @@ const Scheme = () => {
     const displaySettingSave = () => {
         localStorage.setItem("displaySettings", JSON.stringify(funcDisplay));
     }
-    const handleChangeDisplay = (element:any) => {
+    const handleChangeDisplay = (element:String) => {
         console.log(element);
         let actTable = funcDisplay
         switch(element) {

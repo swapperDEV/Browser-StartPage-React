@@ -9,9 +9,9 @@ import Show from './settings/Show'
 import Clock from './settings/Clock'
 const MainSetting = () => {
     const [active, setActive] = useState('General')
-    const changeActive = (which:any) => {
+    const changeActive = ((which:string) => {
         setActive(which)
-    } 
+    })
     const sections = ['General', 'Show', 'Clock', 'About']
     const sectionList = sections.map((name) => (
         <p key={name} onClick={() => setActive(name)} className={active === name ? 'active' : ''}>{name}</p>

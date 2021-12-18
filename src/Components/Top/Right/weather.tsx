@@ -7,7 +7,7 @@ import DataContext from '../../../Store/data-context';
 import { weatherSearch } from '../../../Hooks/use-weather-request';
 import { fullWeatherSearch } from '../../../Hooks/use-full-weather-request';
 import WeatherDisplay from './weather/WeatherDisplay';
-import { getIcon } from '../../../Functions/weatherGetIcon';
+import { getIcon } from '../../../UI/weatherGetIcon';
 import ModalContext from '../../../Store/modal-context';
 import FuncDisplayContext from '../../../Store/funcdisplay-context';
 

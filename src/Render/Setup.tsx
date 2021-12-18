@@ -12,7 +12,7 @@ import { getCityFromCord } from '../Functions/getCityFromCord'
 const Setup = (props:any) => {
     const { registerCompleted } = props
     const data = useContext(DataContext)
-    const [city, changeCity] = useState<any>('')
+    const [city, changeCity] = useState<string>('')
     const [step, setStep] = useState('name')
 
     const nameSend = (value:string) => {
@@ -27,7 +27,6 @@ const Setup = (props:any) => {
     const locationSend = (value:string) => {
         const URL = API.WEATHER_LINK + value + API.WEATHER_KEY
         fetch(URL).then(res => res.json()).then((res:any) => {
-            console.log(res);
             if(res.message === 'city not found' || res.message === 'bad query') {
                 notify('City not found!')
             } else {
@@ -36,21 +35,19 @@ const Setup = (props:any) => {
             }
         })
     }
-    const getCityFowards = async (lat:any, lon:any) => {
+    const getCityFowards = async (lat:number|string, lon:number|string) => {
         let city = await getCityFromCord(lat,lon)
-        await console.log(city);
-        await changeCity(city)
+        await changeCity('')
     }
-    const getCity = () => {
-        getUserGps().then(data=>{
-            console.log(data);
-            if(data.city === null || data.city === 'null' || data.city === undefined || data.city === 'undefined') {
-                let lat = data.lat
-                let lon = data.lon
-                getCityFowards(lat, lon)
-            } else {
-            changeCity(data.city)
-        }})
+    const getCity = async() => {
+        const data = await getUserGps()
+        if(data.city === null || data.city === 'null' || data.city === undefined || data.city === 'undefined') {
+            let lat = data.lat
+            let lon = data.lon
+            getCityFowards(lat, lon)
+        } else {
+        changeCity(data.city)
+    }
     }
     useEffect(() => {
         getCity()
@@ -65,7 +62,7 @@ const Setup = (props:any) => {
                 <i className="fab fa-stumbleupon-circle"></i>
             </div>
             <div className='registerBox'>
-                {step ==='name' &&<NameBox placeholder='Your name' text="Hi, what's your name?" maxLength='20' startValue='' method={nameSend} type='name'/>}
+                {step ==='name' &&<NameBox placeholder='Your name' text="Hi, what's your name?" maxLength='20' startValue='  ' method={nameSend} type='name'/>}
                 {step === 'city' &&<NameBox placeholder='Your city' text={`${data.name}, where you from?`} maxLength='32' startValue={city} type='city' method={locationSend}/>}
             </div>
         </div>

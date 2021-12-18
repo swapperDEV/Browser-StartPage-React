@@ -1,7 +1,8 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import './box.css'
 import { Fade } from "react-awesome-reveal";
 import { notify } from '../../UI/Notification/ErrorNotify';
+import { getUserGps } from '../../Functions/getGps';
 
 const NameBox = (props:any) => {
     const [input, setInput] = useState(props.startValue)
@@ -21,6 +22,20 @@ const NameBox = (props:any) => {
     const handleReset = () => {
         setInput(props.startValue)
     }
+    const dataPrint = async (data:Object) => {
+        //@ts-ignore
+        setInput(data.city)
+    }
+    useEffect(() => {
+        errorFix()
+    },[])
+    const errorFix = async () => {
+        if(props.type === 'city') {
+        if(input.length > 1) {
+        } else {
+            const data = await getUserGps()
+            await dataPrint(data)
+        }}}
     return (
         <>
             <Fade>

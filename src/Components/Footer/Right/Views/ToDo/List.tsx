@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 
 const List = (props:any) => {
-    let list = props.ToDoLists[props.actToDo].list.map((e:any, index:any) => {
+    let list = props.ToDoLists[props.actToDo].list.map((e:any, index:number) => {
     let classes
     if(e.isComplete === false) {
         classes = ''

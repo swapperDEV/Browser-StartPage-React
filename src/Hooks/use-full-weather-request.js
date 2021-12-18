@@ -1,8 +1,8 @@
 import { API } from '../Store/api';
 
 const dayToSearch = () => {
-    let day = new Date();
-    let nextDay = new Date(day);
+    const day = new Date();
+    const nextDay = new Date(day);
     let table = []
     for(let i = 1; i<5; i++) {
         nextDay.setDate(day.getDate() + i);
@@ -12,7 +12,7 @@ const dayToSearch = () => {
     return table   
 }
 const getDateName = (data) => {
-    var date = new Date(data);
+    const date = new Date(data);
     let weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
     let name = weekdays[date.getDay()];
     return name
